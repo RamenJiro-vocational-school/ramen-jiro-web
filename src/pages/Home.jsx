@@ -1,23 +1,56 @@
 import stores from '../data/stores.json'
-import '../style.css'
+import logo from '../assets/title_01.png'
+import { useNavigate } from 'react-router-dom'
+
+// 現在時刻から営業中/休憩中/定休日を判定する関数
+function getStatusClass(store) {
+  const now = new Date()
+  const today = now.getDay() === 0 ? 7 : now.getDay() // 日曜=7
+  const timeStr = now.toTimeString().slice(0,5)
+
+  // 今日が営業日でない
+  if (!store.openDays.includes(today)) return {cls:'closed', text:''}
+
+  // 今日の営業時間
+  const hours = store.business_hours?.[today]
+  if (!hours) return {cls:'closed', text:''}
+
+  // 複数時間帯に対応
+  const ranges = hours.split(',').map(r=>r.trim())
+  const inRange = ranges.some(range=>{
+    const [start,end] = range.split('-')
+    return timeStr >= start && timeStr <= end
+  })
+
+  return inRange
+    ? {cls:'open', text: hours}
+    : {cls:'break', text: hours}
+}
 
 export default function Home() {
-  return (
-    <div className="home-container">
-      {/* ---- ロゴ ---- */}
-      <header className="logo-header">
-        <img src="/images/title_01.png" alt="ラーメン二郎データベース ロゴ" className="logo" />
-      </header>
+  const navigate = useNavigate()
 
-      {/* ---- 店舗一覧 ---- */}
-      <section className="store-list">
-        {stores.map((s) => (
-          <div key={s.name} className="store-card">
-            <h3>{s.name}</h3>
-            <p>{s.area}</p>
-          </div>
-        ))}
-      </section>
+  return (
+    <div>
+      <div className="logo-header">
+        <img src={logo} alt="ラーメン二郎データベース" className="logo" />
+      </div>
+
+      <div className="store-list">
+        {stores.map((s, i) => {
+          const {cls, text} = getStatusClass(s)
+          return (
+            <div
+              key={i}
+              className={`store-card ${cls}`}
+              onClick={() => navigate(`/store/${i}`)}
+            >
+              <div className="store-name">{s.name}</div>
+              <div className="store-hours">{text}</div>
+            </div>
+          )
+        })}
+      </div>
     </div>
   )
 }

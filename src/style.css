@@ -69,3 +69,38 @@ h1 {
 .store-card:hover {
   background: #ffe600;   /* 二郎っぽい黄色 */
 }
+
+.store-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  padding: 1rem;
+}
+
+.store-card {
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 120px;
+  transition: transform 0.2s;
+}
+.store-card:hover { transform: scale(1.03); }
+
+.store-name {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.store-hours {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* 状態別の背景色 */
+.store-card.open  { background: #ffea00; }   /* 営業中 明るい黄 */
+.store-card.break { background: #f5c842; }   /* 休憩中 暗めの黄 */
+.store-card.closed{ background: #d3d3d3; }   /* 定休日 グレー */
