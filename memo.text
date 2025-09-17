@@ -1,0 +1,41 @@
+【開発サーバー関連】
+---------------------------------------
+npm install             # 依存関係をインストール
+npm run dev             # 開発サーバー起動 (http://localhost:5173)
+npm run build           # 本番ビルド (dist フォルダ生成)
+npm run preview         # ビルド後の動作確認
+
+【GitHub 基本操作】
+---------------------------------------
+git status              # 変更確認
+git add .               # すべての変更をステージ
+git commit -m "msg"     # コミット
+git push                # GitHubへ送信
+git pull                # リモート変更を取得
+git log --oneline --graph   # コミット履歴確認
+git checkout -b feature/branch-name  # 新ブランチ作成
+git checkout branch-name            # ブランチ切替
+
+【依存パッケージ管理】
+---------------------------------------
+npm install パッケージ名               # パッケージ追加
+npm install --save-dev パッケージ名     # 開発用追加
+npm uninstall パッケージ名             # パッケージ削除
+npm outdated                           # 更新確認
+npm update                              # アップデート
+
+【状況別ワンライナー】
+---------------------------------------
+# GitHubと差分なく同期
+git pull
+git add .
+git commit -m "update"
+git push
+
+# 新しい機能ページ用のブランチ作成
+git checkout -b feature/top-page-style
+
+# 変更後
+git add .
+git commit -m "トップページ色分け実装"
+git push -u origin feature/top-page-style
