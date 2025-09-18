@@ -6,25 +6,25 @@ import { useNavigate } from 'react-router-dom'
 function getStatusClass(store) {
   const now = new Date()
   const today = now.getDay() === 0 ? 7 : now.getDay() // 日曜=7
-  const timeStr = now.toTimeString().slice(0,5)
+  const timeStr = now.toTimeString().slice(0, 5)
 
   // 今日が営業日でない
-  if (!store.openDays.includes(today)) return {cls:'closed', text:''}
+  if (!store.openDays.includes(today)) return { cls: 'closed', text: '' }
 
   // 今日の営業時間
   const hours = store.business_hours?.[today]
-  if (!hours) return {cls:'closed', text:''}
+  if (!hours) return { cls: 'closed', text: '' }
 
   // 複数時間帯に対応
-  const ranges = hours.split(',').map(r=>r.trim())
-  const inRange = ranges.some(range=>{
-    const [start,end] = range.split('-')
+  const ranges = hours.split(',').map(r => r.trim())
+  const inRange = ranges.some(range => {
+    const [start, end] = range.split('-')
     return timeStr >= start && timeStr <= end
   })
 
   return inRange
-    ? {cls:'open', text: hours}
-    : {cls:'break', text: hours}
+    ? { cls: 'open', text: hours }
+    : { cls: 'break', text: hours }
 }
 
 export default function Home() {
@@ -36,21 +36,19 @@ export default function Home() {
         <img src={logo} alt="ラーメン二郎データベース" className="logo" />
       </div>
 
-      <div className="store-list">
+      <div className="store-grid">
         {stores.map((s, i) => {
-          const {cls, text} = getStatusClass(s)
+          const { cls, text } = getStatusClass(s) // open/break/closed と 営業時間文字列
           return (
-            <div
-              key={i}
-              className={`store-card ${cls}`}
-              onClick={() => navigate(`/store/${i}`)}
-            >
+            <div key={i} className={`store-card ${cls}`}>
               <div className="store-name">{s.name}</div>
               <div className="store-hours">{text}</div>
             </div>
           )
         })}
       </div>
+
+
     </div>
   )
 }

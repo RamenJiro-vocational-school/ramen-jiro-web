@@ -104,3 +104,39 @@ h1 {
 .store-card.open  { background: #ffea00; }   /* 営業中 明るい黄 */
 .store-card.break { background: #f5c842; }   /* 休憩中 暗めの黄 */
 .store-card.closed{ background: #d3d3d3; }   /* 定休日 グレー */
+
+.store-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.store-card {
+  padding: 1rem;
+  border-radius: 10px;
+  color: #000;
+  text-align: center;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+.store-card:hover {
+  transform: scale(1.03);
+}
+
+/* 状態ごとの背景色 */
+.store-card.open {
+  background-color: #ffeb3b;   /* 明るい黄色 */
+}
+.store-card.break {
+  background-color: #ccaf3d;   /* 暗めの黄色 */
+}
+.store-card.closed {
+  background-color: #ccc;      /* グレー */
+}
+
+.store-hours {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
