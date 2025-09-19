@@ -140,3 +140,28 @@ h1 {
   font-size: 0.9rem;
   margin-top: 0.5rem;
 }
+
+.store-grid {
+  padding: 0 2rem 2rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+}
+
+.store-card {
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  font-size: 1.1rem;
+}
+.store-card:hover {
+  transform: translateY(-3px);
+}
+
+.store-card.open  { background:#ffe600; color:#111; }
+.store-card.break { background:#ffca3a; color:#222; }
+.store-card.closed{ background:#e0e0e0; color:#666; }
+.store-name  { font-size:1.4rem; font-weight:700; }
+.store-hours { font-size:1rem;   margin-top:0.3rem; }
+
+@media (max-width: 600px) {
+  .store-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+}
