@@ -39,3 +39,12 @@ git checkout -b feature/top-page-style
 git add .
 git commit -m "トップページ色分け実装"
 git push -u origin feature/top-page-style
+
+【リモート差分確認】
+---------------------------------------
+git fetch                        # リモートの最新情報を取得
+git status                        # up to date と出れば完全同期
+git diff origin/main              # ローカルとGitHubのファイル差分を表示
+git diff --name-status origin/main# 差分ファイル一覧だけ表示
+git log origin/main..             # ローカルだけにあるコミット
+git log ..origin/main             # リモートだけにあるコミット
