@@ -12,9 +12,20 @@ git add .               # すべての変更をステージ
 git commit -m "msg"     # コミット
 git push                # GitHubへ送信
 git pull                # リモート変更を取得
-git log --oneline --graph   # コミット履歴確認
-git checkout -b feature/branch-name  # 新ブランチ作成
-git checkout branch-name            # ブランチ切替
+git log --oneline --graph   # コミット履歴を簡潔に表示
+
+【ブランチ運用の基本】
+---------------------------------------
+# ブランチとは「作業用の枝」。mainを壊さず並行開発できる。
+# 新機能や修正ごとにブランチを切り、完成後にmainへマージする。
+
+git checkout -b feature/"branch-name" # 新ブランチ作成＆移動（""に新規の名前を入力）
+git checkout "branch-name"            # 既存ブランチに切替
+git branch                            # ブランチ一覧確認
+git push -u origin "branch-name"      # 初回プッシュ（-uで追跡設定）
+git merge branch-name                 # mainへマージ（mainに切替後）
+git branch -d branch-name             # ローカル不要ブランチ削除
+git push origin --delete branch-name  # リモート不要ブランチ削除
 
 【依存パッケージ管理】
 ---------------------------------------
@@ -32,19 +43,22 @@ git add .
 git commit -m "update"
 git push
 
-# 新しい機能ページ用のブランチ作成
+# 新しい機能ページ用のブランチ作成→作業→プッシュ
 git checkout -b feature/top-page-style
-
-# 変更後
-git add .
-git commit -m "トップページ色分け実装"
+# 作業してコミット後
 git push -u origin feature/top-page-style
+
+# 完成したら main に統合
+git checkout main
+git pull             # 念のため最新化
+git merge feature/top-page-style
+git push
 
 【リモート差分確認】
 ---------------------------------------
-git fetch                        # リモートの最新情報を取得
-git status                        # up to date と出れば完全同期
-git diff origin/main              # ローカルとGitHubのファイル差分を表示
-git diff --name-status origin/main# 差分ファイル一覧だけ表示
-git log origin/main..             # ローカルだけにあるコミット
-git log ..origin/main             # リモートだけにあるコミット
+git fetch                         # リモートの最新情報を取得（マージはしない）
+git status                         # up to date と出れば完全同期
+git diff origin/main               # ローカルとGitHubのファイル差分を表示
+git diff --name-status origin/main # 差分ファイル一覧だけ表示
+git log origin/main..              # ローカルだけにあるコミット
+git log ..origin/main              # リモートだけにあるコミット
