@@ -6,7 +6,7 @@
   line-height: 1.5;
   font-weight: 400;
   color: #222;
-  background-color: #fff;
+  background-color: #fffacd;
 
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -18,7 +18,7 @@ body {
   padding: 0;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #fff;
+  background-color: #fffacd;
   color: #222;
 }
 
@@ -44,20 +44,27 @@ h1 {
 ================================ */
 .logo-header {
   text-align: center;
-  margin: 1.5rem 0 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  animation: fadeIn 1.2s ease-out;
 }
 .logo {
-  max-width: 320px;
-  width: 80%;
+  max-width: 720px;
+  width: 100%;
   height: auto;
 }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px);}
+  to   { opacity: 1; transform: translateY(0);}
+}
+
 
 /* ================================
    4. 店舗一覧（グリッド）
 ================================ */
 .store-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
   gap: 1rem;
   padding: 0 2rem 2rem;
   max-width: 1200px;
@@ -66,7 +73,18 @@ h1 {
 
 @media (max-width: 600px) {
   .store-grid {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 0.6rem;
+  }
+  .store-card {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+  .store-name {
+    font-size: 1.1rem;
+  }
+  .store-hours {
+    font-size: 0.8rem;
   }
 }
 
@@ -106,4 +124,14 @@ h1 {
 /* --- 状態別の背景色 --- */
 .store-card.open  { background: #ffe600; color: #111; }  /* 営業中 明るい黄 */
 .store-card.break { background: #b3a101; color: #222; }  /* 休憩中 暗めの黄 */
-.store-card.closed{ background: #e0e0e0; color: #666; }  /* 定休日 グレー */
+.store-card.closed{ background: #a8a7a7; color: #666; }  /* 定休日 グレー */
+
+/* ================================
+   6. トップページその他
+================================ */
+.store-extra {
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  color: #555;        /* 少し薄い文字色 */
+  min-height: 1.2em;  /* 何も入ってない時でも高さを確保 */
+}

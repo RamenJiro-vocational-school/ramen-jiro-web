@@ -47,7 +47,10 @@ export default function Home() {
           )
         })}
       </div>
-
+         <div className="store-extra">
+           {/* 例：仮でメッセージ */}
+           {/* 後でアイコンや混雑度を差し込む */}
+         </div>
 
     </div>
   )
