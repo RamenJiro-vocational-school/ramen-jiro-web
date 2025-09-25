@@ -1,5 +1,6 @@
 [
 {
+  "id":"mitahonten",
   "name": "三田本店",
   "kana": "みたほんてん",
   "area": "東京都",
@@ -27,7 +28,7 @@
     "instagram": "",
     "official": "https://ameblo.jp/ramen-jiro-mitahonten/"
   },
-  "menu": "小ラーメン：700円, 大ラーメン：800円",
+  "menu": [{"name":"小ラーメン", "price": 700}, {"name":"小ラーメン", "price": 700}],
   "image": "mita.jpg",
   "hasRenge": false,
   "seasonings": ["白胡椒"],
@@ -40,6 +41,7 @@
 }
 ,
 {
+  "id":"meguroten",
   "name": "目黒店",
   "kana": "めぐろてん",
   "area": "東京都",
