@@ -28,7 +28,7 @@
     "instagram": "",
     "official": "https://ameblo.jp/ramen-jiro-mitahonten/"
   },
-  "menu": [{"name":"小ラーメン", "price": 700}, {"name":"小ラーメン", "price": 700}],
+  "menu": [{"name":"小ラーメン", "price": 700}, {"name":"大ラーメン", "price": 700}],
   "image": "mita.jpg",
   "hasRenge": false,
   "seasonings": ["白胡椒"],
@@ -41,7 +41,7 @@
 }
 ,
 {
-  "id":"meguroten",
+  "id":"meguro",
   "name": "目黒店",
   "kana": "めぐろてん",
   "area": "東京都",
@@ -70,7 +70,7 @@
     "instagram": "",
     "official": ""
   },
-  "menu": "小ラーメン：600円, 大ラーメン：700円",
+  "menu": [{"name":"小ラーメン", "price": 600}, {"name":"大ラーメン", "price": 700}],
   "image": "meguro.jpg",
   "hasRenge": false,
   "seasonings": ["白胡椒", "カエシ", "手指消毒"],
@@ -83,6 +83,7 @@
 }
 ,
 {
+  "id":"sengawa",
   "name": "仙川店",
   "kana": "せんがわてん",
   "area": "東京都",
@@ -110,7 +111,7 @@
     "instagram": "",
     "official": ""
   },
-  "menu": "ラーメン：800円, 大盛ラーメン：900円, 麺少なめ：700円",
+  "menu": [{"name":"ラーメン", "price": 800}, {"name":"大盛ラーメン", "price": 900}, {"name":"麺少なめ", "price": 700}],
   "image": "sengawa.jpg",
   "hasRenge": false,
   "seasonings": ["黒胡椒", "お酢", "一味唐辛子", "カレー粉激辛スパイス"],
