@@ -137,8 +137,42 @@ h1 {
 }
 
 /* ================================
-   7. 店舗詳細ページ
+   7. 店舗詳細ページ（改良版）
 ================================ */
+
+.store-detail {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* 店舗画像 */
+.store-image img {
+  width: 100%;
+  max-height: 350px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* 店舗ヘッダー */
+.store-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+/* 店舗名＋ステータス */
+.store-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.store-header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
 
 /* 営業状態バッジ */
 .status-badge {
@@ -167,7 +201,7 @@ h1 {
   border: 1px solid #cc0000;
 }
 
-/* お気に入りボタン */
+/* お気に入りボタン（右寄せ） */
 .favorite-btn {
   margin-left: auto;
   padding: 6px 12px;
@@ -177,10 +211,56 @@ h1 {
   cursor: pointer;
   font-size: 0.9em;
 }
-
 .favorite-btn.on {
   background: gold;
   border-color: goldenrod;
   color: #000;
   font-weight: bold;
+}
+
+/* 訪問回数カウンター */
+.visit-counter {
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.visit-counter button {
+  font-size: 1.2rem;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #fff;
+}
+.visit-counter span {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* カード風セクション */
+.detail-card {
+  background: #fff;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* 営業時間テーブル・その他テーブル */
+.hours-table,
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+.hours-table td,
+.info-table td {
+  border-bottom: 1px solid #ddd;
+  padding: 0.5rem;
+}
+.hours-table td:first-child,
+.info-table td:first-child {
+  font-weight: bold;
+  width: 120px;
 }
