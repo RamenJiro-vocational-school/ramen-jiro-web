@@ -1,13 +1,13 @@
 import { useParams } from "react-router-dom"
+import { useState, useEffect } from "react"
 import stores from "../data/stores.json"
 
 // 営業中判定ロジック
 function getStatusClass(store) {
   const now = new Date()
-  const today = now.getDay() === 0 ? 7 : now.getDay() // 日曜を7扱い
+  const today = now.getDay() === 0 ? 7 : now.getDay()
   const timeStr = now.toTimeString().slice(0, 5)
 
-  // 営業日じゃない場合
   if (!store.openDays.includes(today)) return { cls: "closed", text: "" }
 
   const hours = store.business_hours?.[today]
@@ -28,6 +28,27 @@ export default function StoreDetail() {
   const { id } = useParams()
   const store = stores.find(s => s.id === id)
 
+  // --- お気に入り状態をLocalStorageで管理 ---
+  const [favorite, setFavorite] = useState(false)
+
+  useEffect(() => {
+    const favs = JSON.parse(localStorage.getItem("favorites") || "[]")
+    setFavorite(favs.includes(id))
+  }, [id])
+
+  const toggleFavorite = () => {
+    const favs = JSON.parse(localStorage.getItem("favorites") || "[]")
+    let newFavs
+    if (favs.includes(id)) {
+      newFavs = favs.filter(f => f !== id)
+      setFavorite(false)
+    } else {
+      newFavs = [...favs, id]
+      setFavorite(true)
+    }
+    localStorage.setItem("favorites", JSON.stringify(newFavs))
+  }
+
   if (!store) {
     return (
       <div className="store-detail">
@@ -45,14 +66,20 @@ export default function StoreDetail() {
         <img src={store.image} alt={store.name} />
       </div>
 
-      {/* 店名＋営業アイコン */}
+      {/* 店名＋営業アイコン＋お気に入りボタン */}
       <div className="store-header">
         <h1>{store.name}</h1>
         <span className={`status-badge ${cls}`}>
-          {cls === "open" && "営業中"}
-          {cls === "break" && "休憩中"}
-          {cls === "closed" && "定休日"}
+          {cls === "open" && "🟢 営業中"}
+          {cls === "break" && "🟡 休憩中"}
+          {cls === "closed" && "🔴 定休日"}
         </span>
+        <button
+          className={`favorite-btn ${favorite ? "on" : ""}`}
+          onClick={toggleFavorite}
+        >
+          {favorite ? "★ お気に入り" : "☆ お気に入り"}
+        </button>
       </div>
       <p className="area">{store.area}</p>
 

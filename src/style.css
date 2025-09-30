@@ -135,3 +135,52 @@ h1 {
   color: #555;        /* 少し薄い文字色 */
   min-height: 1.2em;  /* 何も入ってない時でも高さを確保 */
 }
+
+/* ================================
+   7. 店舗詳細ページ
+================================ */
+
+/* 営業状態バッジ */
+.status-badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.9em;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.status-badge.open {
+  background: #e6ffed;
+  color: #008000;
+  border: 1px solid #008000;
+}
+
+.status-badge.break {
+  background: #fff7e6;
+  color: #cc7a00;
+  border: 1px solid #cc7a00;
+}
+
+.status-badge.closed {
+  background: #ffe6e6;
+  color: #cc0000;
+  border: 1px solid #cc0000;
+}
+
+/* お気に入りボタン */
+.favorite-btn {
+  margin-left: auto;
+  padding: 6px 12px;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+.favorite-btn.on {
+  background: gold;
+  border-color: goldenrod;
+  color: #000;
+  font-weight: bold;
+}
