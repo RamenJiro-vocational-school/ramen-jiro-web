@@ -40,17 +40,22 @@ export default function Home() {
         {stores.map((s, i) => {
           const { cls, text } = getStatusClass(s) // open/break/closed と 営業時間文字列
           return (
-            <div key={i} className={`store-card ${cls}`}>
+            <div
+              key={i}
+              className={`store-card ${cls}`}
+              onClick={() => navigate(`/store/${s.id}`)}
+            >
               <div className="store-name">{s.name}</div>
               <div className="store-hours">{text}</div>
             </div>
+
           )
         })}
       </div>
-         <div className="store-extra">
-           {/* 例：仮でメッセージ */}
-           {/* 後でアイコンや混雑度を差し込む */}
-         </div>
+      <div className="store-extra">
+        {/* 例：仮でメッセージ */}
+        {/* 後でアイコンや混雑度を差し込む */}
+      </div>
 
     </div>
   )
