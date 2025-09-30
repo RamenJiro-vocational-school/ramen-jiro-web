@@ -71,7 +71,7 @@
     "official": ""
   },
   "menu": [{"name":"小ラーメン", "price": 600}, {"name":"大ラーメン", "price": 700}],
-  "image": "/images/02_meguro/meguro.JPG",
+  "image": "/images/02_meguro/meguro.jpg",
   "hasRenge": false,
   "seasonings": ["白胡椒", "カエシ", "手指消毒"],
   "boilAdjustable": true,
@@ -112,7 +112,7 @@
     "official": ""
   },
   "menu": [{"name":"ラーメン", "price": 800}, {"name":"大盛ラーメン", "price": 900}, {"name":"麺少なめ", "price": 700}],
-  "image": "/images/03_sengawa/sengawa.jpg",
+  "image": "/images/03_sengawa/sengawa.JPG",
   "hasRenge": false,
   "seasonings": ["黒胡椒", "お酢", "一味唐辛子", "カレー粉激辛スパイス"],
   "boilAdjustable": true,
@@ -153,7 +153,7 @@
       "official": "https://www.ramen-jiro.com/kabujiro.html"
     },
     "menu": [{"name":"ラーメン", "price": 950}, {"name":"大ラーメン", "price": 1050}, {"name":"つけ麺", "price": 1050}],
-    "image": "/images/04_kabuki/kabuki.jpg",
+    "image": "/images/04_kabuki/kabuki.JPG",
     "hasRenge": true,
     "seasonings": ["カラメ", "ラー油", "一味唐辛子", "黒胡椒"],
     "boilAdjustable": true,
@@ -1791,7 +1791,7 @@
     "official": ""
   },
   "menu": [{"name":"小ラーメン", "price": 750}, {"name":"大ラーメン", "price": 850}, {"name":"生卵", "price": 100}, {"name":"ネギ", "price": 100}, {"name":"うぐいすつけ麺変更", "price": 150}],
-  "image": "/images/44_asakura/asakura.jpg",
+  "image": "/images/44_asakura/asakura.JPG",
   "hasRenge": false,
   "seasonings": ["黒胡椒", "粗挽き唐辛子", "カラメ"],
   "boilAdjustable": true,

@@ -1,13 +1,42 @@
 import { useParams } from "react-router-dom"
 import stores from "../data/stores.json"
 
+// 営業中判定ロジック
+function getStatusClass(store) {
+  const now = new Date()
+  const today = now.getDay() === 0 ? 7 : now.getDay() // 日曜を7扱い
+  const timeStr = now.toTimeString().slice(0, 5)
+
+  // 営業日じゃない場合
+  if (!store.openDays.includes(today)) return { cls: "closed", text: "" }
+
+  const hours = store.business_hours?.[today]
+  if (!hours) return { cls: "closed", text: "" }
+
+  const ranges = hours.split(",").map(r => r.trim())
+  const inRange = ranges.some(range => {
+    const [start, end] = range.split("-")
+    return timeStr >= start && timeStr <= end
+  })
+
+  return inRange
+    ? { cls: "open", text: hours }
+    : { cls: "break", text: hours }
+}
+
 export default function StoreDetail() {
   const { id } = useParams()
   const store = stores.find(s => s.id === id)
 
   if (!store) {
-    return <div className="store-detail"><h1>店舗が見つかりませんでした</h1></div>
+    return (
+      <div className="store-detail">
+        <h1>店舗が見つかりませんでした</h1>
+      </div>
+    )
   }
+
+  const { cls, text } = getStatusClass(store)
 
   return (
     <div className="store-detail">
@@ -16,8 +45,15 @@ export default function StoreDetail() {
         <img src={store.image} alt={store.name} />
       </div>
 
-      {/* 店舗名とエリア */}
-      <h1>{store.name}</h1>
+      {/* 店名＋営業アイコン */}
+      <div className="store-header">
+        <h1>{store.name}</h1>
+        <span className={`status-badge ${cls}`}>
+          {cls === "open" && "営業中"}
+          {cls === "break" && "休憩中"}
+          {cls === "closed" && "定休日"}
+        </span>
+      </div>
       <p className="area">{store.area}</p>
 
       {/* 住所・アクセス */}
@@ -37,13 +73,32 @@ export default function StoreDetail() {
         ))}
       </ul>
       {store.holidayNote && <p className="holiday">※{store.holidayNote}</p>}
+      {text && <p className="now-hours">本日の営業時間: {text}</p>}
 
       {/* SNSリンク */}
       <h2>SNS</h2>
       <ul>
-        {store.sns.twitter && <li><a href={store.sns.twitter} target="_blank" rel="noreferrer">Twitter</a></li>}
-        {store.sns.instagram && <li><a href={store.sns.instagram} target="_blank" rel="noreferrer">Instagram</a></li>}
-        {store.sns.official && <li><a href={store.sns.official} target="_blank" rel="noreferrer">公式サイト</a></li>}
+        {store.sns.twitter && (
+          <li>
+            <a href={store.sns.twitter} target="_blank" rel="noreferrer">
+              Twitter
+            </a>
+          </li>
+        )}
+        {store.sns.instagram && (
+          <li>
+            <a href={store.sns.instagram} target="_blank" rel="noreferrer">
+              Instagram
+            </a>
+          </li>
+        )}
+        {store.sns.official && (
+          <li>
+            <a href={store.sns.official} target="_blank" rel="noreferrer">
+              公式サイト
+            </a>
+          </li>
+        )}
       </ul>
 
       {/* メニュー */}
