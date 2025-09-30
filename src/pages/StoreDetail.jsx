@@ -31,13 +31,14 @@ export default function StoreDetail() {
       {/* 店舗名 + 営業状況 + お気に入り */}
       <div className="store-header">
         <h1>{store.name}</h1>
-        <div className="store-actions">
-          {/* 営業状況 */}
-          <span className="status open">営業中</span>
-          {/* お気に入りボタン */}
-          <button className="fav-btn">☆ お気に入り</button>
-        </div>
+
+        {/* 営業状況 */}
+        <span className="status-badge open">営業中</span>
+
+        {/* お気に入りボタン */}
+        <button className="favorite-btn">☆ お気に入り</button>
       </div>
+
 
       {/* 訪問回数ボタン */}
       <div className="visit-counter">
