@@ -176,10 +176,12 @@ h1 {
 
 /* 営業状態バッジ */
 .status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   padding: 4px 10px;
-  border-radius: 12px;
+  border-radius: 20px;
   font-size: 0.9em;
-  margin-left: 10px;
   font-weight: bold;
 }
 
@@ -188,17 +190,29 @@ h1 {
   color: #008000;
   border: 1px solid #008000;
 }
+.status-badge.open::before {
+  content: "●";
+  color: #008000;
+}
 
 .status-badge.break {
   background: #fff7e6;
   color: #cc7a00;
   border: 1px solid #cc7a00;
 }
+.status-badge.break::before {
+  content: "●";
+  color: #cc7a00;
+}
 
 .status-badge.closed {
   background: #ffe6e6;
   color: #cc0000;
   border: 1px solid #cc0000;
+}
+.status-badge.closed::before {
+  content: "●";
+  color: #cc0000;
 }
 
 /* お気に入りボタン（右寄せ） */
