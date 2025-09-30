@@ -1791,7 +1791,6 @@
     "official": ""
   },
   "menu": [{"name":"小ラーメン", "price": 750}, {"name":"大ラーメン", "price": 850}, {"name":"生卵", "price": 100}, {"name":"ネギ", "price": 100}, {"name":"うぐいすつけ麺変更", "price": 150}],
-  "menu": "小ラーメン：750円, 大ラーメン：850円, 生卵：100円, ネギ：100円, うぐいすつけ麺変更：+150円",
   "image": "asakura.jpg",
   "hasRenge": false,
   "seasonings": ["黒胡椒", "粗挽き唐辛子", "カラメ"],
