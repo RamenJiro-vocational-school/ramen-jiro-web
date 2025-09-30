@@ -318,7 +318,7 @@
       "instagram": "https://www.instagram.com/yaen0828/",
       "official": ""
     },
-    "menu": "小ラーメン：1000円, 大ラーメン：1100円",
+    "menu": [{"name":"小ラーメン", "price": 1000}, {"name":"大ラーメン", "price": 1100}],
     "image": "/images/08_yaen/yaen.jpg",
     "hasRenge": true,
     "seasonings": ["黒胡椒", "カラメ", "一味唐辛子"],
