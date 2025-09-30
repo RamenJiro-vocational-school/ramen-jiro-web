@@ -152,7 +152,7 @@
       "instagram": "",
       "official": "https://www.ramen-jiro.com/kabujiro.html"
     },
-    "menu": "ラーメン：950円, 大ラーメン：1050円, つけ麺：1050円",
+    "menu": [{"name":"ラーメン", "price": 950}, {"name":"大ラーメン", "price": 1050}, {"name":"つけ麺", "price": 1050}],
     "image": "kabuki.jpg",
     "hasRenge": true,
     "seasonings": ["カラメ", "ラー油", "一味唐辛子", "黒胡椒"],
@@ -193,7 +193,7 @@
       "instagram": "",
       "official": ""
     },
-    "menu": "小ラーメン：900円, 大ラーメン：1050円",
+    "menu": [{"name":"小ラーメン", "price": 900}, {"name":"大ラーメン", "price": 1050}],
     "image": "shinagawa.jpg",
     "hasRenge": true,
     "seasonings": ["黒胡椒", "一味唐辛子", "爪楊枝 "],
@@ -235,7 +235,7 @@
       "instagram": "",
       "official": ""
     },
-    "menu": "ラーメン：1000円, 大ラーメン：1100円",
+    "menu": [{"name":"ラーメン", "price": 1000}, {"name":"大ラーメン", "price": 1100}],
     "image": "otaki.jpg",
     "hasRenge": true,
     "seasonings": ["カラメ", "白胡椒", "一味唐辛子"],
@@ -277,7 +277,7 @@
       "instagram": "",
       "official": ""
     },
-    "menu": "小ラーメン：1000円, 小豚ラーメン：1150円",
+    "menu": [{"name":"小ラーメン", "price": 1000}, {"name":"小豚ラーメン", "price": 1150}],
     "image": "shindaita.jpg",
     "hasRenge": false,
     "seasonings": [],
@@ -359,7 +359,7 @@
       "instagram": "",
       "official": "https://ramen-jiro.com/index.html"
     },
-    "menu": "ラーメン：950円, 大ラーメン：1050円",
+    "menu": [{"name":"ラーメン", "price": 950}, {"name":"大ラーメン", "price": 1050}],
     "image": "ikebukuro.jpg",
     "hasRenge": true,
     "seasonings": ["黒胡椒", "一味唐辛子", "カエシ"],
@@ -401,7 +401,7 @@
       "instagram": "https://www.instagram.com/jiro_kame/",
       "youtube": "https://www.youtube.com/channel/UCAtUnIscHg6C4i8wVjOLQTQ"
     },
-    "menu": "ラーメン：1000円, 大ラーメン：1100円, 持ち帰りタマネギキムチ：500円",
+    "menu": [{"name":"ラーメン", "price": 1000}, {"name":"大ラーメン", "price": 1100}, {"name":"持ち帰りタマネギキムチ", "price": 500}],
     "image": "kameido.jpg",
     "hasRenge": true,
     "seasonings": ["一味唐辛子", "白胡椒", "山椒", "お酢"],
@@ -442,7 +442,7 @@
       "instagram": "",
       "official": "https://www.mag2.com/m/0001675511"
     },
-    "menu": "小ラーメン：900円, 大ラーメン：1000円",
+    "menu": [{"name":"小ラーメン", "price": 900}, {"name":"大ラーメン", "price": 1000}],
     "image": "kawasaki.jpg",
     "hasRenge": true,
     "seasonings": ["白胡椒", "一味唐辛子", "カラメ"],
@@ -482,7 +482,7 @@
       "instagram": "",
       "official": ""
     },
-    "menu": "小ラーメン：900円, 大ラーメン：1100円",
+    "menu": [{"name":"小ラーメン", "price": 900}, {"name":"大ラーメン", "price": 1100}],
     "image": "fuchu.jpg",
     "hasRenge": true,
     "seasonings": ["白胡椒", "一味唐辛子"],
@@ -523,7 +523,7 @@
       "instagram": "",
       "official": ""
     },
-    "menu": "小ラーメン：1000円, 小ラーメン（豚1枚）：950円（平日限定）",
+    "menu": [{"name":"小ラーメン", "price": 1000}, {"name":"小ラーメン（豚1枚：平日限定）", "price": 950}],
     "image": "matsudo.jpg",
     "hasRenge": false,
     "seasonings": ["白胡椒", "一味唐辛子"],
@@ -564,7 +564,7 @@
     "instagram": "",
     "official": ""
   },
-  "menu": "ミニラーメン：700円, 小ラーメン：800円, 大ラーメン：900円",
+  "menu": [{"name":"ミニラーメン", "price": 700}, {"name":"小ラーメン", "price": 800}, {"name":"大ラーメン", "price":900}],
   "image": "mejirodai.jpg",
   "hasRenge": true,
   "seasonings": ["黒胡椒", "粗挽き唐辛子", "カラメ"],
@@ -605,7 +605,7 @@
     "instagram": "",
     "official": "https://ogkb26.tumblr.com/"
   },
-  "menu": "",
+  "menu": [{"name":"豚1枚ラーメン", "price": 950}, {"name":"豚2枚ラーメン", "price": 1000}, {"name":"豚4枚ラーメン", "price": 1200}],
   "image": "ogikubo.jpg",
   "hasRenge": true,
   "seasonings": ["白胡椒", "醤油", "一味唐辛子", "（水汲み機脇に）お酢, 辣油, ゆずタレ"],
@@ -646,7 +646,7 @@
     "instagram": "",
     "official": ""
   },
-  "menu": "小ラーメン：800円, 大ラーメン：850円, 小麺半分：750円",
+  "menu": [{"name":"小ラーメン", "price": 800}, {"name":"大ラーメン", "price": 850}, {"name":"小麺半分", "price": 750}],
   "image": "kaminoge.jpg",
   "hasRenge": true,
   "seasonings": ["一味唐辛子", "白胡椒"],
@@ -687,7 +687,7 @@
     "instagram": "",
     "official": ""
   },
-  "menu": "小ラーメン：880円, 大ラーメン：1100円, ミニラーメン：780円, みそラーメン：980円, みそつけ麺：1080円",
+  "menu": [{"name":"小ラーメン", "price": 880}, {"name":"大ラーメン", "price": 1100}, {"name":"ミニラーメン", "price": 780}, {"name":"みそラーメン", "price": 980}, {"name":"みそつけ麺", "price": 1080}],
   "image": "keiseiokubo.jpg",
   "hasRenge": true,
   "seasonings": ["一味唐辛子", "黒胡椒"],
@@ -728,7 +728,7 @@
     "instagram": "",
     "official": ""
   },
-  "menu": "小ラーメン：900円, 大盛ラーメン：1000円, 小汁なし：900円, 大盛汁なし：1000円",
+  "menu": [{"name":"小ラーメン", "price": 900}, {"name":"大盛ラーメン", "price": 1000}, {"name":"小汁なし", "price": 900}, {"name":"大汁なし", "price": 1000}],
   "image": "ichinoe.jpg",
   "hasRenge": true,
   "seasonings": ["一味唐辛子", "黒胡椒", "白胡椒", "粗挽き鷹の爪"],
@@ -769,7 +769,7 @@
     "facebook": "https://www.facebook.com/sumojiro/",
     "official": "http://sumoji.jp/"
   },
-  "menu": "ラーメン：950円, 大ラーメン：1100円, 少なめラーメン：950円, 少なめより少なめラーメン：920円",
+  "menu": [{"name":"ラーメン", "price": 950}, {"name":"大ラーメン", "price": 1100}, {"name":"少なめラーメン", "price": 950}, {"name":"少なめより少なめラーメン", "price": 920}],
   "image": "sagamiono.jpg",
   "hasRenge": true,
   "seasonings": ["一味唐辛子", "黒胡椒", "カエシ"],
@@ -810,7 +810,7 @@
     "instagram": "",
     "official": ""
   },
-  "menu": "小ラーメン：940円, 大ラーメン：1040円, 汁なし変更：120円",
+  "menu": [{"name":"小ラーメン", "price": 940}, {"name":"大ラーメン", "price": 1040}, {"name":"汁なし変更", "price": 120}],
   "image": "kannai.jpg",
   "hasRenge": true,
   "seasonings": ["白胡椒", "お酢", "一味唐辛子"],
@@ -851,7 +851,7 @@
     "instagram": "",
     "official": "https://www.mag2.com/m/0001676039"
   },
-  "menu": "ラーメン：950円, 大ラーメン：1050円",
+  "menu": [{"name":"ラーメン", "price": 950}, {"name":"大ラーメン", "price": 1050}],
   "image": "jinbocho.jpg",
   "hasRenge": false,
   "seasonings": ["粗挽き唐辛子", "白胡椒"],
@@ -891,7 +891,7 @@
     "line": "https://line.me/R/ti/p/@539iqcao",
     "official": "https://xs667126.xsrv.jp/koiwajiro/"
   },
-  "menu": "小ラーメン：900円, 大ラーメン：1000円, 少なめ：900円, 半分900円",
+  "menu": [{"name":"小ラーメン", "price": 900}, {"name":"大ラーメン", "price": 1000}, {"name":"少なめ", "price": 900}, {"name":"半分", "price": 900}],
   "image": "koiwa.jpg",
   "hasRenge": false,
   "seasonings": ["白胡椒", "一味唐辛子"],
@@ -932,7 +932,7 @@
     "instagram": "",
     "official": ""
   },
-  "menu": "ラーメン：1000円, 大ラーメン：1100円, 少なめ：850円",
+  "menu": [{"name":"ラーメン", "price": 1000}, {"name":"大ラーメン", "price": 1100}, {"name":"少なめ", "price": 850}],
   "image": "hibari.jpg",
   "hasRenge": false,
   "seasonings": ["一味唐辛子"],
@@ -973,7 +973,7 @@
     "facebook": "https://www.facebook.com/tochigikaidoten/",
     "official": ""
   },
-  "menu": "小ラーメン：900円, 大ラーメン：1000円",
+  "menu": [{"name":"小ラーメン", "price": 900}, {"name":"大ラーメン", "price": 1000}],
   "image": "tochigi.jpg",
   "hasRenge": true,
   "seasonings": ["一味唐辛子", "白胡椒"],
@@ -1014,7 +1014,7 @@
     "instagram": "https://www.instagram.com/tachikawajiro/",
     "official": ""
   },
-  "menu": "ラーメン豚3枚：900円, 少なめ豚1枚：750円, つけ麺味変更：50円, 汁なし変更：80円, 麺大盛：100円",
+  "menu": [{"name":"ラーメン豚3枚", "price": 900}, {"name":"少なめ豚1枚", "price": 750}, {"name":"麺大盛", "price": 100}, {"name":"汁なし変更", "price": 80}],
   "image": "tachikawa.jpg",
   "hasRenge": true,
   "seasonings": ["粗挽き唐辛子", "カラメ","一味唐辛子", "白胡椒", "黒胡椒"],
@@ -1054,7 +1054,7 @@
     "instagram": "",
     "official": ""
   },
-  "menu": "小：850円, 小豚：1000円, 大：950円, 大豚：1200円, 生たまご：50円",
+  "menu": [{"name":"小", "price": 850}, {"name":"小豚", "price": 1000}, {"name":"大", "price": 950}, {"name":"大豚", "price": 1200}, {"name":"生たまご", "price": 50}],
   "image": "senju.jpg",
   "hasRenge": false,
   "seasonings": ["白胡椒", "一味唐辛子"],
@@ -1095,7 +1095,7 @@
     "instagram": "",
     "official": ""
   },
-  "menu": "麺並：950円, 中：1000円, 大：1050円, 麺増：1150円, つけ麺：+100円, つけ麺トマト味：+150円",
+  "menu": [{"name":"麺並", "price": 950}, {"name":"中", "price": 1000}, {"name":"大", "price": 1050}, {"name":"麺増", "price": 1150}, {"name":"つけ麺変更", "price": 100}, {"name":"トマト味つけ麺変更", "price": 150}],
   "image": "kashiwa.jpg",
   "hasRenge": true,
   "seasonings": ["白胡椒", "一味唐辛子"],
@@ -1136,7 +1136,7 @@
     "instagram": "",
     "official": ""
   },
-  "menu": "ラーメン：990円, ラーメン少なめ：990円, ラーメン半分：990円, MINI：840円, 大ラーメン：1090円",
+  "menu": [{"name":"ラーメン", "price": 990}, {"name":"ラーメン少なめ", "price": 990}, {"name":"ラーメン半分", "price": 990}, {"name":"MINI", "price": 840}, {"name":"大ラーメン", "price": 1090}],
   "image": "fujisawa.jpg",
   "hasRenge": true,
   "seasonings": ["カラメ", "一味唐辛子", "白胡椒"],
@@ -1177,7 +1177,7 @@
     "facebook": "https://ja-jp.facebook.com/jironishidai/",
     "official": "https://x.com/hiroshinishidai"
   },
-  "menu": "ラーメン小：990円, ラーメン大：1100円, ラーメン少なめ：990円, ラーメン半分：960円, ラーメンミニ：850円",
+  "menu": [{"name":"ラーメン小", "price": 990}, {"name":"ラーメン大", "price": 1100}, {"name":"ラーメン少なめ", "price": 990}, {"name":"ラーメン半分", "price": 960}, {"name":"ラーメンミニ", "price": 850}],
   "image": "nishidai.jpg",
   "hasRenge": false,
   "seasonings": ["白胡椒", "醤油", "お酢", "花椒", "一味唐辛子"],
@@ -1218,7 +1218,7 @@
     "instagram": "",
     "official": ""
   },
-  "menu": "小ラーメン：940円, 大ラーメン：1040円, 甘～い脂：70円, 味付うずら：120円",
+  "menu": [{"name":"小ラーメン", "price": 940}, {"name":"大ラーメン", "price": 1040}, {"name":"甘～い脂", "price": 70}, {"name":"味付うずら", "price": 120}],
   "image": "nakayama.jpg",
   "hasRenge": true,
   "seasonings": ["白胡椒", "黒胡椒", "一味唐辛子", "カラメ", "お酢"],
@@ -1260,7 +1260,7 @@
     "instagram": "",
     "official": ""
   },
-  "menu": "小ラーメン：920円, 大ラーメン：1020円, 汁なし変更：+100円",
+  "menu": [{"name":"小ラーメン", "price": 920}, {"name":"大ラーメン", "price": 1020}, {"name":"汁なし変更", "price": 100}],
   "image": "sendai.jpg",
   "hasRenge": true,
   "seasonings": ["一味唐辛子", "カエシ", "白胡椒", "お酢"],
@@ -1301,7 +1301,7 @@
     "instagram": "",
     "official": ""
   },
-  "menu": "ミニラーメン：900円, 小ラーメン：1000円",
+  "menu": [{"name":"ミニラーメン", "price": 900}, {"name":"小ラーメン", "price": 1000}],
   "image": "sapporo.jpg",
   "hasRenge": false,
   "seasonings": ["カエシ", "一味唐辛子"],
@@ -1342,7 +1342,7 @@
     "instagram": "",
     "official": ""
   },
-  "menu": "小ラーメン：850円, 大ラーメン：950円, プチラーメン：800円, ミニラーメン：850円, 小つけ麺エビ味：1000円, 大つけ麺エビ味：1100円",
+  "menu": [{"name":"小ラーメン", "price": 850}, {"name":"大ラーメン", "price": 950}, {"name":"プチラーメン", "price": 800}, {"name":"ミニラーメン", "price": 850}, {"name":"小つけ麺エビ味", "price": 1000},{"name":"大つけ麺エビ味", "price": 1100}],
   "image": "aizu.jpg",
   "hasRenge": true,
   "seasonings": ["白胡椒", "黒胡椒", "一味唐辛子", "カエシ"],
@@ -1382,7 +1382,7 @@
     "instagram": "https://www.instagram.com/jiro.niigata/",
     "official": ""
   },
-  "menu": "ラーメン小：900円, ラーメン大：1000円, ラーメン小ぶた入り：1250円, ラーメン大ぶた入り：1350円",
+  "menu": [{"name":"ラーメン小", "price": 900}, {"name":"ラーメン大", "price": 1000}, {"name":"ラーメン小ぶた入り", "price": 1250}, {"name":"ラーメン大ぶた入り", "price": 1350}],
   "image": "nigata.jpg",
   "hasRenge": true,
   "seasonings": ["白胡椒", "一味唐辛子", "カラメ"],
@@ -1423,7 +1423,7 @@
     "instagram": "",
     "official": "https://kwge26.tumblr.com/"
   },
-  "menu": "ラーメン：950円, 麺増し：50円, 豚増し：200円, お持ち帰り：1000円",
+  "menu": [{"name":"ラーメン", "price": 950}, {"name":"麺増", "price": 50}, {"name":"豚増し", "price": 200}, {"name":"お持ち帰り", "price": 1000}],
   "image": "kawagoe.jpg",
   "hasRenge": true,
   "seasonings": ["白胡椒", "カラメ"],
@@ -1464,7 +1464,7 @@
     "instagram": "",
     "official": ""
   },
-  "menu": "ラーメン並：1100円, ラーメン半分：1000円, ラーメン中盛り：1100円, ラーメン大盛り：1200円, 脂飯：200円, 九条ねぎ：100円",
+  "menu": [{"name":"ラーメン並", "price": 1100}, {"name":"ラーメン半分", "price": 1000}, {"name":"ラーメン中盛り", "price": 1100}, {"name":"ラーメン大盛り", "price": 1200}, {"name":"脂飯", "price": 200},{"name":"九条ねぎ", "price": 100}],
   "image": "kyoto.jpg",
   "hasRenge": true,
   "seasonings": ["一味唐辛子", "黒胡椒", "白胡椒", "カラメ", "ラー油"],
@@ -1504,7 +1504,7 @@
     "instagram": "",
     "official": "https://ksgy26.tumblr.com/"
   },
-  "menu": "小ラーメン：950円, 麺半分豚1枚：850円, 汁なし変更：100円, ぶた増し：300円",
+  "menu": [{"name":"小ラーメン", "price": 950}, {"name":"麺半分豚1枚", "price": 850}, {"name":"汁なし変更", "price": 100}, {"name":"ぶた増し", "price": 300}],
   "image": "koshigaya.jpg",
   "hasRenge": true,
   "seasonings": ["白胡椒"],
@@ -1545,7 +1545,7 @@
     "instagram": "",
     "official": ""
   },
-  "menu": "小ラーメン：900円, 小豚ラーメン：1050円, 大ラーメン：1000円, 大豚ラーメン：1150円",
+  "menu": [{"name":"小ラーメン", "price": 900}, {"name":"小豚ラーメン", "price": 1050}, {"name":"大ラーメン", "price": 1000}, {"name":"大豚ラーメン", "price": 1150}],
   "image": "maebashi.jpg",
   "hasRenge": true,
   "seasonings": ["一味唐辛子", "黒胡椒"],
@@ -1586,7 +1586,7 @@
     "instagram": "",
     "official": ""
   },
-  "menu": "小：900円, 大：1000円, ミニ：800円, ねぎ：100円, うずら：100円, しょうが：50円, 生玉子：50円, キムチ：100円, 粉チーズ：100円",
+  "menu": [{"name":"小", "price": 900}, {"name":"大", "price": 1000}, {"name":"ミニ", "price": 800}, {"name":"ねぎ", "price": 100}, {"name":"うずら", "price": 100}, {"name":"生玉子", "price": 50}, {"name":"キムチ", "price": 100}, {"name":"粉チーズ", "price": 100}, {"name":"しょうが", "price": 50}],
   "image": "chiba.jpg",
   "hasRenge": true,
   "seasonings": ["白胡椒", "一味唐辛子", "カラメ"],
@@ -1627,7 +1627,7 @@
     "instagram": "",
     "official": ""
   },
-  "menu": "小：850円, 小ぶた：1000円, 大：1000円, 大ぶた：1100円, 生たまご：100円, 玉ねぎ：100円, おろしぽん酢：100円",
+  "menu": [{"name":"小", "price": 850}, {"name":"小ぶた", "price": 1000}, {"name":"大", "price": 1000}, {"name":"大ぶた", "price": 1100}, {"name":"生たまご", "price": 100}, {"name":"玉ねぎ", "price": 100}, {"name":"おろしぽん酢", "price": 100}],
   "image": "omiya.jpg",
   "hasRenge": true,
   "seasonings": ["白胡椒、カラメ、七味唐辛子"],
@@ -1668,7 +1668,7 @@
     "instagram": "",
     "official": ""
   },
-  "menu": "小ラーメン：900円, 豚増し：200円, はんぺん脂（半分）：150円, しょうが：50円, ねぎ：100円, 生たまご：50円, うずら（5個）：100円",
+  "menu": [{"name":"小ラーメン", "price": 900}, {"name":"豚増し", "price": 200}, {"name":"はんぺん脂", "price": 150}, {"name":"しょうが", "price": 50}, {"name":"ねぎ", "price": 100}, {"name":"生たまご", "price": 50}, {"name":"うずら（5個）", "price": 100}],
   "image": "hitachinaka.jpg",
   "hasRenge": true,
   "seasonings": ["カラメ", "白胡椒"],
@@ -1709,7 +1709,7 @@
     "instagram": "",
     "official": ""
   },
-  "menu": "小：900円, 小豚：1100円, 小（豚1枚）：850円, 大盛：+50円, 生卵：100円",
+  "menu": [{"name":"小", "price": 900}, {"name":"小豚", "price": 1100}, {"name":"小（豚1枚）", "price": 850}, {"name":"大盛変更", "price": 50}, {"name":"生たまご", "price": 100}],
   "image": "hitotsubashi.jpg",
   "hasRenge": true,
   "seasonings": ["カラメ", "粗挽き唐辛子", "白胡椒"],
@@ -1750,7 +1750,7 @@
     "instagram": "",
     "official": ""
   },
-  "menu": "小ラーメン：800円, 小豚入り：950円, ミニラーメン：700円, 大ラーメン：900円, 大豚入り：1050円, 生卵：50円, Ninniku Jan：100円",
+  "menu": [{"name":"小ラーメン", "price": 800}, {"name":"小豚入り", "price": 950}, {"name":"ミニラーメン", "price": 700}, {"name":"大ラーメン", "price": 900}, {"name":"大豚入り", "price": 1050}, {"name":"生卵", "price": 50}, {"name":"Ninniku Jan", "price": 100}],
   "image": "ikuta.jpg",
   "hasRenge": true,
   "seasonings": ["一味唐辛子", "カラメ", "黒胡椒"],
@@ -1790,6 +1790,7 @@
     "instagram": "",
     "official": ""
   },
+  "menu": [{"name":"小ラーメン", "price": 750}, {"name":"大ラーメン", "price": 850}, {"name":"生卵", "price": 100}, {"name":"ネギ", "price": 100}, {"name":"うぐいすつけ麺変更", "price": 150}],
   "menu": "小ラーメン：750円, 大ラーメン：850円, 生卵：100円, ネギ：100円, うぐいすつけ麺変更：+150円",
   "image": "asakura.jpg",
   "hasRenge": false,
