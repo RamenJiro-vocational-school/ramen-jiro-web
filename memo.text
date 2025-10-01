@@ -40,7 +40,7 @@ npm update                              # アップデート
 # GitHubと差分なく同期
 git pull
 git add .
-git commit -m "JSON変更"
+git commit -m "店舗詳細ページの変更"
 git push
 
 # 新しい機能ページ用のブランチ作成→作業→プッシュ

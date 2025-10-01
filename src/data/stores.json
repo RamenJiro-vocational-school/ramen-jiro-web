@@ -236,7 +236,7 @@
       "official": ""
     },
     "menu": [{"name":"ラーメン", "price": 1000}, {"name":"大ラーメン", "price": 1100}],
-    "image": "/images/06_otaki/otaki.jpg",
+    "image": "/images/06_otaki/otaki.JPG",
     "hasRenge": true,
     "seasonings": ["カラメ", "白胡椒", "一味唐辛子"],
     "boilAdjustable": true,
@@ -402,7 +402,7 @@
       "youtube": "https://www.youtube.com/channel/UCAtUnIscHg6C4i8wVjOLQTQ"
     },
     "menu": [{"name":"ラーメン", "price": 1000}, {"name":"大ラーメン", "price": 1100}, {"name":"持ち帰りタマネギキムチ", "price": 500}],
-    "image": "/images/10_kameido/kameido.jpg",
+    "image": "/images/10_kameido/kameido.JPG",
     "hasRenge": true,
     "seasonings": ["一味唐辛子", "白胡椒", "山椒", "お酢"],
     "boilAdjustable": true,
@@ -647,7 +647,7 @@
     "official": ""
   },
   "menu": [{"name":"小ラーメン", "price": 800}, {"name":"大ラーメン", "price": 850}, {"name":"小麺半分", "price": 750}],
-  "image": "/images/16_kaminoge/kaminoge.jpg",
+  "image": "/images/16_kaminoge/kaminoge.JPG",
   "hasRenge": true,
   "seasonings": ["一味唐辛子", "白胡椒"],
   "boilAdjustable": true,
@@ -729,7 +729,7 @@
     "official": ""
   },
   "menu": [{"name":"小ラーメン", "price": 900}, {"name":"大盛ラーメン", "price": 1000}, {"name":"小汁なし", "price": 900}, {"name":"大汁なし", "price": 1000}],
-  "image": "/images/18_ichinoe/ichinoe.jpg",
+  "image": "/images/18_ichinoe/ichinoe.JPG",
   "hasRenge": true,
   "seasonings": ["一味唐辛子", "黒胡椒", "白胡椒", "粗挽き鷹の爪"],
   "boilAdjustable": false,
@@ -770,7 +770,7 @@
     "official": "http://sumoji.jp/"
   },
   "menu": [{"name":"ラーメン", "price": 950}, {"name":"大ラーメン", "price": 1100}, {"name":"少なめラーメン", "price": 950}, {"name":"少なめより少なめラーメン", "price": 920}],
-  "image": "/images/19_sagamiono/sagamiono.jpg",
+  "image": "/images/19_sagamiono/sagamiono.JPG",
   "hasRenge": true,
   "seasonings": ["一味唐辛子", "黒胡椒", "カエシ"],
   "boilAdjustable": false,
@@ -933,7 +933,7 @@
     "official": ""
   },
   "menu": [{"name":"ラーメン", "price": 1000}, {"name":"大ラーメン", "price": 1100}, {"name":"少なめ", "price": 850}],
-  "image": "/images/23_hibari/hibari.jpg",
+  "image": "/images/23_hibari/hibari.JPG",
   "hasRenge": false,
   "seasonings": ["一味唐辛子"],
   "boilAdjustable": false,
@@ -1055,7 +1055,7 @@
     "official": ""
   },
   "menu": [{"name":"小", "price": 850}, {"name":"小豚", "price": 1000}, {"name":"大", "price": 950}, {"name":"大豚", "price": 1200}, {"name":"生たまご", "price": 50}],
-  "image": "/images/26_senju/senju.jpg",
+  "image": "/images/26_senju/senju.JPG",
   "hasRenge": false,
   "seasonings": ["白胡椒", "一味唐辛子"],
   "boilAdjustable": false,
@@ -1219,7 +1219,7 @@
     "official": ""
   },
   "menu": [{"name":"小ラーメン", "price": 940}, {"name":"大ラーメン", "price": 1040}, {"name":"甘～い脂", "price": 70}, {"name":"味付うずら", "price": 120}],
-  "image": "/images/30_nakayama/nakayama.jpg",
+  "image": "/images/30_nakayama/nakayama.JPG",
   "hasRenge": true,
   "seasonings": ["白胡椒", "黒胡椒", "一味唐辛子", "カラメ", "お酢"],
   "boilAdjustable": true,
@@ -1302,7 +1302,7 @@
     "official": ""
   },
   "menu": [{"name":"ミニラーメン", "price": 900}, {"name":"小ラーメン", "price": 1000}],
-  "image": "/images/32_sapporo/sapporo.jpg",
+  "image": "/images/32_sapporo/sapporo.JPG",
   "hasRenge": false,
   "seasonings": ["カエシ", "一味唐辛子"],
   "boilAdjustable": true,
@@ -1587,7 +1587,7 @@
     "official": ""
   },
   "menu": [{"name":"小", "price": 900}, {"name":"大", "price": 1000}, {"name":"ミニ", "price": 800}, {"name":"ねぎ", "price": 100}, {"name":"うずら", "price": 100}, {"name":"生玉子", "price": 50}, {"name":"キムチ", "price": 100}, {"name":"粉チーズ", "price": 100}, {"name":"しょうが", "price": 50}],
-  "image": "/images/39_chiba/chiba.jpg",
+  "image": "/images/39_chiba/chiba.JPG",
   "hasRenge": true,
   "seasonings": ["白胡椒", "一味唐辛子", "カラメ"],
   "boilAdjustable": true,
@@ -1628,7 +1628,7 @@
     "official": ""
   },
   "menu": [{"name":"小", "price": 850}, {"name":"小ぶた", "price": 1000}, {"name":"大", "price": 1000}, {"name":"大ぶた", "price": 1100}, {"name":"生たまご", "price": 100}, {"name":"玉ねぎ", "price": 100}, {"name":"おろしぽん酢", "price": 100}],
-  "image": "/images/40_omiya/omiya.jpg",
+  "image": "/images/40_omiya/omiya.JPG",
   "hasRenge": true,
   "seasonings": ["白胡椒、カラメ、七味唐辛子"],
   "boilAdjustable": true,
@@ -1751,7 +1751,7 @@
     "official": ""
   },
   "menu": [{"name":"小ラーメン", "price": 800}, {"name":"小豚入り", "price": 950}, {"name":"ミニラーメン", "price": 700}, {"name":"大ラーメン", "price": 900}, {"name":"大豚入り", "price": 1050}, {"name":"生卵", "price": 50}, {"name":"Ninniku Jan", "price": 100}],
-  "image": "/images/43_ikuta/ikuta.jpg",
+  "image": "/images/43_ikuta/ikuta.JPG",
   "hasRenge": true,
   "seasonings": ["一味唐辛子", "カラメ", "黒胡椒"],
   "boilAdjustable": true,

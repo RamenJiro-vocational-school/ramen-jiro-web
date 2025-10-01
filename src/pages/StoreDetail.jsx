@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import stores from "../data/stores.json"
 
 const dayMap = {
@@ -12,14 +12,43 @@ const dayMap = {
   7: "日曜"
 }
 
+// 営業ステータス判定
+function getStatus(store) {
+  const now = new Date()
+  const today = now.getDay() === 0 ? 7 : now.getDay() // 日曜=7
+  const timeStr = now.toTimeString().slice(0, 5) // "HH:MM"
+
+  const hours = store.business_hours?.[today]
+
+  if (!hours) {
+    return { cls: "closed", text: "定休日" }
+  }
+
+  // 複数時間帯対応
+  const ranges = hours.split(",").map(r => r.trim())
+  const inRange = ranges.some(range => {
+    const [start, end] = range.split("-")
+    return timeStr >= start && timeStr <= end
+  })
+
+  if (inRange) {
+    return { cls: "open", text: "営業中" }
+  } else {
+    return { cls: "prep", text: "準備中" }
+  }
+}
+
 export default function StoreDetail() {
   const { id } = useParams()
   const store = stores.find(s => s.id === id)
   const [visitCount, setVisitCount] = useState(0)
+  const [isFavorite, setIsFavorite] = useState(false) //お気に入り判定
 
   if (!store) {
     return <div className="store-detail"><h1>店舗が見つかりませんでした</h1></div>
   }
+
+  const status = getStatus(store)
 
   return (
     <div className="store-detail">
@@ -31,14 +60,15 @@ export default function StoreDetail() {
       {/* 店舗名 + 営業状況 + お気に入り */}
       <div className="store-header">
         <h1>{store.name}</h1>
-
-        {/* 営業状況 */}
-        <span className="status-badge open">営業中</span>
-
+        <span className={`status-badge ${status.cls}`}>{status.text}</span>
         {/* お気に入りボタン */}
-        <button className="favorite-btn">☆ お気に入り</button>
+        <button
+          className={`favorite-btn ${isFavorite ? "on" : ""}`}
+          onClick={() => setIsFavorite(!isFavorite)}
+        >
+          {isFavorite ? "★ お気に入り" : "☆ お気に入り"}
+        </button>
       </div>
-
 
       {/* 訪問回数ボタン */}
       <div className="visit-counter">
@@ -52,7 +82,6 @@ export default function StoreDetail() {
         <h2>住所・アクセス</h2>
         <p>{store.address}</p>
         <p>{store.access}</p>
-        {/* Google Map */}
         <iframe
           src={`https://www.google.com/maps?q=${store.lat},${store.lng}&z=16&output=embed`}
           width="100%"
@@ -103,11 +132,15 @@ export default function StoreDetail() {
       {/* その他 */}
       <div className="detail-card">
         <h2>その他</h2>
-        <p>調味料: {store.seasonings.join("、")}</p>
-        <p>レンゲ: {store.hasRenge ? "あり" : "なし"}</p>
-        <p>茹で調整: {store.boilAdjustable ? "可能" : "不可"}</p>
-        <p>駐車情報: {store.parkingInfo}</p>
-        {store.memo && <p>メモ: {store.memo}</p>}
+        <table className="info-table">
+          <tbody>
+            <tr><td>調味料</td><td>{store.seasonings.join("、")}</td></tr>
+            <tr><td>レンゲ</td><td>{store.hasRenge ? "あり" : "なし"}</td></tr>
+            <tr><td>茹で調整</td><td>{store.boilAdjustable ? "可能" : "不可"}</td></tr>
+            <tr><td>駐車情報</td><td>{store.parkingInfo}</td></tr>
+            {store.memo && <tr><td>メモ</td><td>{store.memo}</td></tr>}
+          </tbody>
+        </table>
       </div>
     </div>
   )
