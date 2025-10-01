@@ -1,6 +1,7 @@
 import stores from '../data/stores.json'
 import logo from '../assets/title_01.png'
 import { useNavigate } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 
 // 現在時刻から営業中/休憩中/定休日を判定する関数
 function getStatusClass(store) {
@@ -29,6 +30,13 @@ function getStatusClass(store) {
 
 export default function Home() {
   const navigate = useNavigate()
+  const [favorites, setFavorites] = useState([])
+
+  // --- localStorage からお気に入りを読み込む ---
+  useEffect(() => {
+    const favs = JSON.parse(localStorage.getItem("favorites") || "[]")
+    setFavorites(favs)
+  }, [])
 
   return (
     <div>
@@ -39,12 +47,16 @@ export default function Home() {
       <div className="store-grid">
         {stores.map((s, i) => {
           const { cls, text } = getStatusClass(s) // open/break/closed と 営業時間文字列
+          const isFav = favorites.includes(s.id) // --- お気に入り判定 ---
+
           return (
             <div
               key={i}
               className={`store-card ${cls}`}
               onClick={() => navigate(`/store/${s.id}`)}
             >
+              {/* 星アイコン（右上） */}
+              {isFav && <div className="fav-star">★</div>}
               <div className="store-name">{s.name}</div>
               <div className="store-hours">{text}</div>
             </div>
@@ -53,7 +65,6 @@ export default function Home() {
         })}
       </div>
       <div className="store-extra">
-        {/* 例：仮でメッセージ */}
         {/* 後でアイコンや混雑度を差し込む */}
       </div>
 

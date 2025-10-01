@@ -44,6 +44,12 @@ export default function StoreDetail() {
   const [visitCount, setVisitCount] = useState(0)
   const [isFavorite, setIsFavorite] = useState(false) //お気に入り判定
 
+  // ページ表示時に localStorage を確認して反映
+  useEffect(() => {
+    const favs = JSON.parse(localStorage.getItem("favorites") || "[]")
+    setIsFavorite(favs.includes(store.id))
+  }, [store.id])
+
   if (!store) {
     return <div className="store-detail"><h1>店舗が見つかりませんでした</h1></div>
   }
@@ -64,9 +70,21 @@ export default function StoreDetail() {
         {/* お気に入りボタン */}
         <button
           className={`favorite-btn ${isFavorite ? "on" : ""}`}
-          onClick={() => setIsFavorite(!isFavorite)}
+          onClick={() => {
+            const favs = JSON.parse(localStorage.getItem("favorites") || "[]")
+            let updatedFavs
+            if (isFavorite) {
+              // 解除
+              updatedFavs = favs.filter(f => f !== store.id)
+            } else {
+              // 登録
+              updatedFavs = [...favs, store.id]
+            }
+            localStorage.setItem("favorites", JSON.stringify(updatedFavs))
+            setIsFavorite(!isFavorite)
+          }}
         >
-          {isFavorite ? "★ お気に入り" : "☆ お気に入り"}
+          {isFavorite ? "★ お気に入り済み" : "☆ お気に入り"}
         </button>
       </div>
 
