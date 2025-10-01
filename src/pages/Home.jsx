@@ -59,7 +59,7 @@ export default function Home() {
 
       {/* フィルタバー */}
       <div className="filter-bar">
-        {["北日本", "東京", "埼玉", "神奈川", "千葉", "北関東", "西日本"].map(region => (
+        {["北日本", "東京都", "埼玉県", "神奈川県", "千葉県", "北関東", "西日本"].map(region => (
           <button
             key={region}
             className={`filter-btn ${activeFilters.includes(region) ? "active" : ""}`}
