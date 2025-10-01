@@ -71,6 +71,31 @@ h1 {
   margin: 2rem auto;
 }
 
+/* 絞り込みバー */
+.filter-bar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.filter-btn {
+  padding: 6px 12px;
+  border: 1px solid #aaa;
+  border-radius: 20px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.filter-btn.active {
+  background: gold;
+  border-color: goldenrod;
+  font-weight: bold;
+}
+
+
 @media (max-width: 600px) {
   .store-grid {
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
