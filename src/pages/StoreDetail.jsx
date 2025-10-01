@@ -38,21 +38,38 @@ function getStatus(store) {
   }
 }
 
+// export default function StoreDetail() {
+//   const { id } = useParams()
+//   const store = stores.find(s => s.id === id)
+//   const [visitCount, setVisitCount] = useState(0)
+//   const [isFavorite, setIsFavorite] = useState(false) //お気に入り判定
 export default function StoreDetail() {
   const { id } = useParams()
   const store = stores.find(s => s.id === id)
-  const [visitCount, setVisitCount] = useState(0)
-  const [isFavorite, setIsFavorite] = useState(false) //お気に入り判定
 
-  // ページ表示時に localStorage を確認して反映
+  // localStorageから即時復元
+  const [visitCount, setVisitCount] = useState(() => {
+    const saved = localStorage.getItem(`visitCount_${id}`)
+    return saved !== null ? parseInt(saved, 10) : 0
+  })
+
+  const [isFavorite, setIsFavorite] = useState(false)
+
+  // ページ表示時にお気に入り状態を復元
   useEffect(() => {
     const favs = JSON.parse(localStorage.getItem("favorites") || "[]")
-    setIsFavorite(favs.includes(store.id))
-  }, [store.id])
+    setIsFavorite(favs.includes(id))
+  }, [id])
+
+  // visitCount が変わるたび保存
+  useEffect(() => {
+    localStorage.setItem(`visitCount_${id}`, visitCount)
+  }, [visitCount, id])
 
   if (!store) {
     return <div className="store-detail"><h1>店舗が見つかりませんでした</h1></div>
   }
+
 
   const status = getStatus(store)
 
