@@ -35,20 +35,44 @@ export default function Home() {
   const [activeFilters, setActiveFilters] = useState([]);
 
 
-  // --- localStorage からお気に入りを読み込む ---
+  // --- localStorage からお気に入りを常に同期する ---
   useEffect(() => {
-    const favs = JSON.parse(localStorage.getItem("favorites") || "[]")
-    setFavorites(favs)
-  }, [])
+    const syncFavorites = () => {
+      const favs = JSON.parse(localStorage.getItem("favorites") || "[]")
+      setFavorites(favs)
+    }
 
-    const filteredStores = stores.filter(s => {
-    const matchRegion =
-      activeFilters.length === 0 || activeFilters.includes(s.area);
+    // 初回実行
+    syncFavorites()
 
-    const matchFavorite =
-      !activeFilters.includes("お気に入り") || favorites.includes(s.id);
+    // storage イベントで他タブや別ページからの更新にも対応
+    window.addEventListener("storage", syncFavorites)
 
-    return matchRegion && matchFavorite;
+    return () => {
+      window.removeEventListener("storage", syncFavorites)
+    }
+  })
+
+
+  const filteredStores = stores.filter(s => {
+    const inFav = favorites.includes(s.id);
+    const inRegion = activeFilters.includes(s.area);
+
+    // 1. フィルタが空なら全部表示
+    if (activeFilters.length === 0) return true;
+
+    // 2. お気に入りフィルタが有効な場合（お気に入りじゃない店舗は除外）
+    if (activeFilters.includes("お気に入り") && !inFav) {
+      return false;
+    }
+
+    // 3. 地域フィルタが有効な場合（地域に含まれない店舗は除外）
+    const hasRegionFilter = activeFilters.some(f => f !== "お気に入り");
+    if (hasRegionFilter && !inRegion) {
+      return false;
+    }
+
+    return true;
   });
 
   return (
@@ -59,7 +83,7 @@ export default function Home() {
 
       {/* フィルタバー */}
       <div className="filter-bar">
-        {["北日本", "東京都", "埼玉県", "神奈川県", "千葉県", "北関東", "西日本"].map(region => (
+        {["北日本", "東京都", "埼玉県", "神奈川", "千葉県", "北関東", "西日本"].map(region => (
           <button
             key={region}
             className={`filter-btn ${activeFilters.includes(region) ? "active" : ""}`}
@@ -86,7 +110,7 @@ export default function Home() {
             )
           }}
         >
-          ★ お気に入り
+          ★
         </button>
       </div>
 
