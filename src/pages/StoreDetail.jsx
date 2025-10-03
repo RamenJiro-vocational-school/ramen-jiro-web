@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 import { useState, useEffect } from "react"
 import stores from "../data/stores.json"
 
@@ -45,6 +45,7 @@ function getStatus(store) {
 //   const [isFavorite, setIsFavorite] = useState(false) //お気に入り判定
 export default function StoreDetail() {
   const { id } = useParams()
+  const navigate = useNavigate()
   const store = stores.find(s => String(s.id) === String(id))
 
   console.log("StoreDetail表示確認:", { id, store });
@@ -56,6 +57,7 @@ export default function StoreDetail() {
   })
 
   const [isFavorite, setIsFavorite] = useState(false)
+  const [showTopBtn, setShowTopBtn] = useState(false)
 
   // ページ表示時にお気に入り状態を復元
   useEffect(() => {
@@ -179,6 +181,12 @@ export default function StoreDetail() {
           </tbody>
         </table>
       </div>
+      <img
+        src="/images/icon/top.png"
+        alt="トップへ"
+        className="back-to-top"
+        onClick={() => navigate("/")}
+      />
     </div>
   )
 }

@@ -340,3 +340,18 @@ h1 {
   font-weight: bold;
   width: 120px;
 }
+
+.back-to-top {
+  position: fixed;
+  bottom: 20px;   /* 画面下からの距離 */
+  right: 20px;    /* 画面右からの距離 */
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  z-index: 999;   /* 最前面に出す */
+  transition: transform 0.2s ease-in-out;
+}
+
+.back-to-top:hover {
+  transform: scale(1.1);
+}
