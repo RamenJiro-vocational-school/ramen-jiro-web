@@ -117,20 +117,23 @@ h1 {
 /* スマホ画面の店舗カード */
 @media (max-width: 600px) {
   .store-grid {
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 0.6rem;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* 横幅を少し小さく */
+    gap: 0.5rem;
   }
   .store-card {
-    font-size: 0.9rem;
-    padding: 0.6rem;
+    height: 80px;          /* 高さも圧縮 */
+    font-size: 0.8rem;
+    border-radius: 6px;     /* 角丸を小さくして無骨に */
+    padding: 0.5rem;
   }
   .store-name {
-    font-size: 1.1rem;
-  }
-  .store-hours {
     font-size: 0.8rem;
   }
+  .store-hours {
+    font-size: 0.5rem;
+  }
 }
+
 
 /* ================================
    5. 店舗カード
@@ -174,6 +177,8 @@ h1 {
   font-size: 1.4rem;
   color: gold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  pointer-events: none; /* ★がクリックを邪魔しないようにする */
+
 }
 
 /* --- 状態別の背景色 --- */

@@ -45,7 +45,7 @@ function getStatus(store) {
 //   const [isFavorite, setIsFavorite] = useState(false) //お気に入り判定
 export default function StoreDetail() {
   const { id } = useParams()
-  const store = stores.find(s => s.id === id)
+  const store = stores.find(s => String(s.id) === String(id))
 
   // localStorageから即時復元
   const [visitCount, setVisitCount] = useState(() => {
@@ -58,7 +58,7 @@ export default function StoreDetail() {
   // ページ表示時にお気に入り状態を復元
   useEffect(() => {
     const favs = JSON.parse(localStorage.getItem("favorites") || "[]")
-    setIsFavorite(favs.includes(id))
+    setIsFavorite(favs.includes(String(id)))
   }, [id])
 
   // visitCount が変わるたび保存
