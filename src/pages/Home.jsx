@@ -51,7 +51,7 @@ export default function Home() {
     return () => {
       window.removeEventListener("storage", syncFavorites)
     }
-  })
+  }, [])
 
 
   const filteredStores = stores.filter(s => {

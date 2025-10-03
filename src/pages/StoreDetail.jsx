@@ -47,6 +47,8 @@ export default function StoreDetail() {
   const { id } = useParams()
   const store = stores.find(s => String(s.id) === String(id))
 
+  console.log("StoreDetail表示確認:", { id, store });
+
   // localStorageから即時復元
   const [visitCount, setVisitCount] = useState(() => {
     const saved = localStorage.getItem(`visitCount_${id}`)
