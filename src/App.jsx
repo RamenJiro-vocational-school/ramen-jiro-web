@@ -8,6 +8,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/store/:id" element={<StoreDetail />} />
+        <Route path="/stamp" element={<Stamp />} />
       </Routes>
     </Router>
   )

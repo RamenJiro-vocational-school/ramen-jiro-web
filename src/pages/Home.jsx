@@ -34,6 +34,8 @@ export default function Home() {
   const [favorites, setFavorites] = useState([])
   const [activeFilters, setActiveFilters] = useState([]);
 
+  // ハンバーガーアイコン開閉状態を管理
+  const [menuOpen, setMenuOpen] = useState(false)
 
   // --- localStorage からお気に入りを常に同期する ---
   useEffect(() => {
@@ -74,9 +76,23 @@ export default function Home() {
 
     return true;
   });
-
-  return (
+return (
     <div>
+      {/* ✅ ③ ハンバーガーメニューとメニューリスト */}
+      <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+        ☰
+      </div>
+
+      {menuOpen && (
+        <div className="menu">
+          <button onClick={() => { setMenuOpen(false); navigate("/"); }}>🏠 ホーム</button>
+          <button onClick={() => { setMenuOpen(false); navigate("/Stamp"); }}>🏅 スタンプラリー</button>
+          <button onClick={() => { setMenuOpen(false); navigate("/search"); }}>🔍 検索</button>
+          <button onClick={() => { setMenuOpen(false); navigate("/Contact"); }}>📩 お問い合わせ</button>
+        </div>
+      )}
+
+      {/* ロゴ部分 */}
       <div className="logo-header">
         <img src={logo} alt="ラーメン二郎データベース" className="logo" />
       </div>
@@ -114,10 +130,11 @@ export default function Home() {
         </button>
       </div>
 
+      {/* 店舗カード一覧 */}
       <div className="store-grid">
         {filteredStores.map((s, i) => {
-          const { cls, text } = getStatusClass(s) // open/break/closed と 営業時間文字列
-          const isFav = favorites.includes(s.id) // --- お気に入り判定 ---
+          const { cls, text } = getStatusClass(s)
+          const isFav = favorites.includes(s.id)
 
           return (
             <div
@@ -125,19 +142,13 @@ export default function Home() {
               className={`store-card ${cls}`}
               onClick={() => navigate(`/store/${s.id}`)}
             >
-              {/* 星アイコン（右上） */}
               {isFav && <div className="fav-star">★</div>}
               <div className="store-name">{s.name}</div>
               <div className="store-hours">{text}</div>
             </div>
-
           )
         })}
       </div>
-      <div className="store-extra">
-        {/* 後でアイコンや混雑度を差し込む */}
-      </div>
-
     </div>
   )
 }
