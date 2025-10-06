@@ -654,3 +654,99 @@ h1 {
     transform-origin: top center;
   }
 }
+
+/* ================================
+  9. 訪問日記（VisitDiary.jsx）
+================================ */
+
+.diary-container {
+  padding: 20px;
+  position: relative;
+  min-height: 100vh;
+  background-color: #fffbe7;
+}
+
+.log-button {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
+}
+.log-button:hover {
+  transform: scale(1.1);
+}
+
+/* モーダル */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+}
+.modal-content h2 {
+  text-align: center;
+}
+.modal-content label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+.modal-content input,
+.modal-content select,
+.modal-content textarea {
+  width: 100%;
+  margin-top: 5px;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+.modal-buttons button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 6px;
+  background-color: #fcd200;
+  font-weight: bold;
+  cursor: pointer;
+}
+.modal-buttons button:hover {
+  background-color: #ffd700;
+}
+
+/* 一覧 */
+.diary-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 70px;
+}
+.diary-card {
+  background: white;
+  border: 2px solid #eee;
+  border-radius: 10px;
+  padding: 10px;
+  width: 180px;
+  text-align: center;
+}
+.diary-thumb {
+  width: 100%;
+  border-radius: 10px;
+}
