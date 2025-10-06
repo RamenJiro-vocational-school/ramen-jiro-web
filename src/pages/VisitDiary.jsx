@@ -42,13 +42,13 @@ export default function VisitDiary() {
   return (
     <div className="diary-container">
       {/* 日記アイコン（右上） */}
-      <div className="log-button"> 
+      <div>
         <img
-        src="/images/log.png"
-        alt="記録する"
-        className="log-button"
-        onClick={() => setShowModal(true)}
-      />
+          src="/images/icon/log.png"
+          alt="記録する"
+          className="log-button"
+          onClick={() => setShowModal(true)}
+        />
       </div>
 
       {/* モーダル部分 */}
