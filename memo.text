@@ -39,6 +39,7 @@ npm update                              # アップデート
 ---------------------------------------
 # GitHubと差分なく同期
 git pull
+
 git add .
 git commit -m "スタンプラリーページの作成"
 git push

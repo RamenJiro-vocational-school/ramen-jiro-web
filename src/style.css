@@ -189,7 +189,7 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 120px;
+  height: 80px;
   font-size: 1.1rem;
   font-weight: bold;
   color: #000;
@@ -401,41 +401,69 @@ h1 {
 /* ================================
   8. スタンプラリー（最終安定版）
 ================================ */
-
 /* ===== ページ全体 ===== */
 .stamp-container {
-  background-color: #ffffff;
+  background-color: #fff;
   font-family: "UD Digi Kyokasho N-R", sans-serif;
   text-align: center;
   min-height: 100vh;
-  padding: 20px 0;
+  padding: 20px 0 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow-x: hidden; /* ★ 横はみ出し防止 */
+  overflow-x: hidden;
 }
 
-/* ===== タイトル ===== */
+/* ===== 枠全体（黄色い背景） ===== */
+.stamp-card-wrapper {
+  background-color: #fff9c4;
+  border: 4px solid #fff9c4;
+  border-radius: 12px;
+  padding: 24px 20px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* ===== タイトル（枠内） ===== */
+.stamp-header {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
 .stamp-title {
   font-size: 1.8rem;
   font-weight: 800;
-  margin: 0.5em 0 0.2em;
+  margin: 0;
+}
+
+.title-black {
+  color: #000;
+}
+
+.title-red {
+  color: #e53935;
+  margin-left: 6px;
 }
 
 .stamp-note {
   font-size: 0.9rem;
-  margin-bottom: 1em;
+  margin-top: 4px;
+  margin-bottom: 12px;
   color: #333;
 }
 
-/* ===== スタンプ全体 ===== */
+/* ===== スタンプ一覧 ===== */
 .stamp-grid {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   gap: 6px;
   background-color: #fff9c4;
   padding: 12px;
-  border: 4px solid #fff9c4;
   border-radius: 8px;
   width: fit-content;
   margin: 0 auto;
@@ -462,18 +490,18 @@ h1 {
   box-sizing: border-box;
 }
 
+.stamp-card.visited {
+  background-color: #ffeb3b;
+}
+
 .store-name {
-  white-space: pre-wrap; /* ★ JSXの\n改行を反映 */
+  white-space: pre-wrap;
   word-break: break-word;
   line-height: 1.2;
   text-align: center;
   font-size: 0.7rem;
   display: block;
   max-width: 100%;
-}
-
-.stamp-card.visited {
-  background-color: #ffeb3b;
 }
 
 /* ===== バッジ ===== */
@@ -493,6 +521,60 @@ h1 {
   align-items: center;
 }
 
+/* ===== 名前・日付（枠内下部） ===== */
+.stamp-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  margin-top: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.footer-left,
+.footer-right {
+  display: flex;
+  align-items: center;
+}
+
+.footer-underline {
+  display: inline-block;
+  min-width: 100px;
+  border-bottom: 1px solid #333;
+  margin-left: 4px;
+  text-align: left;
+}
+
+/* ===== 入力欄（枠外） ===== */
+.stamp-inputs {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.input-group input[type="text"],
+.input-group input[type="date"] {
+  padding: 4px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 140px;
+  font-size: 0.9rem;
+  font-family: inherit;
+}
+
 /* ===== 保存ボタン ===== */
 .capture-btn {
   margin-top: 10px;
@@ -506,24 +588,34 @@ h1 {
   font-weight: bold;
 }
 
-/* ===== スマホ対応（比率を保って縮小） ===== */
+/* ===== スマホ対応 ===== */
 @media (max-width: 768px) {
+  .stamp-card-wrapper {
+    transform: scale(0.45);
+    transform-origin: top center;
+    margin-bottom: -60px; /* ← 下を調整して切れ防止 */
+  }
+
   .stamp-grid {
     grid-template-columns: repeat(10, 1fr);
     gap: 4px;
     padding: 8px;
-    justify-content: center;
-    transform: scale(0.4); /* ← これで全体を縮小 */
-    transform-origin: top center; /* ← 中央に寄せる */
-    margin: 0 auto; /* ← はみ出し防止 */
-    max-width: 100%; /* ← 画面からはみ出さない */
-    overflow: hidden; /* ← 念のため保険 */
   }
 
   .stamp-card {
-    width: 75px;
-    height: 45px;
+    width: 70px;
+    height: 42px;
     font-size: 0.55rem !important;
+  }
+
+  .stamp-footer {
+    font-size: 0.75rem;
+    width: 90%;
+    margin-top: 6px;
+  }
+
+  .footer-underline {
+    min-width: 60px;
   }
 
   .stamp-title {
@@ -532,5 +624,13 @@ h1 {
 
   .stamp-note {
     font-size: 0.75rem;
+  }
+
+  .stamp-inputs {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    transform: scale(0.9);
+    transform-origin: top center;
   }
 }
