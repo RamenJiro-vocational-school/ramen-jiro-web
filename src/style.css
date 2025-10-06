@@ -189,8 +189,8 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 80px;
-  font-size: 1.1rem;
+  height: 70px;
+  font-size: 1rem;
   font-weight: bold;
   color: #000;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
@@ -201,13 +201,14 @@ h1 {
 }
 
 /* --- 店舗名・営業時間 --- */
-.store-name {
-  font-size: 1.4rem;
+.store-grid .store-name {
+  font-size: 1.3rem;
   font-weight: 700;
   margin-bottom: 0.3rem;
 }
+
 .store-hours {
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: #333;
 }
 
@@ -587,6 +588,25 @@ h1 {
   font-size: 0.8rem;
   font-weight: bold;
 }
+
+.share-btn {
+  margin-top: 10px;
+  margin-left: 8px;
+  padding: 6px 14px;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.share-btn:hover {
+  background-color: #1565c0;
+}
+
 
 /* ===== スマホ対応 ===== */
 @media (max-width: 768px) {

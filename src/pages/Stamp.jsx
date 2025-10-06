@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import stores from "../data/stores.json";
 import html2canvas from "html2canvas";
 
 console.log("Stamp.jsx 読み込みOK");
 
 export default function Stamp() {
+  const navigate = useNavigate();
   const [visitCounts, setVisitCounts] = useState({});
-  const [userName, setUserName] = useState(""); // ← 追加
-  const [issueDate, setIssueDate] = useState(""); // ← 追加
+  const [userName, setUserName] = useState("");
+  const [issueDate, setIssueDate] = useState("");
 
   useEffect(() => {
     const counts = {};
@@ -33,6 +35,23 @@ export default function Stamp() {
       link.href = canvas.toDataURL("image/png");
       link.click();
     });
+  };
+
+  const handleShare = async () => {
+    const el = document.getElementById("stampCard");
+    const canvas = await html2canvas(el, { scale: 2, useCORS: true });
+    const blob = await new Promise((resolve) => canvas.toBlob(resolve, "image/png"));
+    const file = new File([blob], "jiro_stamp.png", { type: "image/png" });
+
+    if (navigator.canShare && navigator.canShare({ files: [file] })) {
+      await navigator.share({
+        title: "ラーメン二郎訪問記録",
+        text: `${userName || "ジロリアン"} のスタンプカード🔥`,
+        files: [file],
+      });
+    } else {
+      alert("このブラウザでは共有機能が使えません。画像を保存してSNSに投稿してください。");
+    }
   };
 
   return (
@@ -114,12 +133,19 @@ export default function Stamp() {
         </div>
       </div>
 
+      <img
+        src="/images/icon/top.png"
+        alt="トップへ"
+        className="back-to-top"
+        onClick={() => navigate("/")}
+      />
+
       {/* 共有ボタン */}
       <div className="stamp-actions">
-        <button onClick={handleCapture} className="capture-btn">
-          📸 保存 / 共有
-        </button>
+        <button onClick={handleCapture} className="capture-btn">📸 保存</button>
+        <button onClick={handleShare} className="share-btn">🚀 共有</button>
       </div>
+
     </div>
   );
 }
