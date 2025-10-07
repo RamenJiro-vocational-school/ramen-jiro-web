@@ -748,7 +748,10 @@ h1 {
 }
 .diary-thumb {
   width: 100%;
+  aspect-ratio: 16 / 9;
   border-radius: 10px;
+  object-fit: cover;
+  object-position: center;
 }
 
 /* カルーセル用 */
@@ -785,7 +788,6 @@ h1 {
 }
 
 /* 絞り込みバー */
-
 .filter-bar {
   display: flex;
   flex-wrap: wrap;
@@ -808,7 +810,94 @@ h1 {
   font-weight: bold;
   cursor: pointer;
 }
-
 .filter-bar button:hover {
   background-color: #ffd700;
+}
+
+/* ======================
+📱 スマホ対応
+====================== */
+@media screen and (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+  }
+
+  .diary-container {
+    padding: 10px 12px 30px;
+  }
+
+  /* フィルターバー縦並び */
+  .filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    margin-bottom: 25px;
+  }
+  .filter-bar select,
+  .filter-bar button {
+    width: 100%;
+    font-size: 15px;
+    padding: 8px 10px;
+  }
+
+  /* 投稿カードを2列グリッドに変更 */
+  .diary-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-top: 30px;
+  }
+
+  .diary-card {
+    width: 90%;
+    padding: 8px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .diary-thumb {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+
+  .diary-card h3 {
+    font-size: 15px;
+    margin: 6px 0 2px;
+  }
+  .diary-card p {
+    font-size: 13px;
+    margin: 2px 0;
+  }
+
+  /* 🐷記録ボタン */
+  .log-button {
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    width: 60px;
+    height: 60px;
+    z-index: 2000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    background-color: transparent;
+  }
+
+  /* モーダル調整 */
+  .modal-content {
+    width: 92%;
+    max-width: 360px;
+    padding: 15px;
+  }
+  .modal-content h2 {
+    font-size: 18px;
+  }
+  .modal-buttons {
+    flex-direction: column;
+    gap: 6px;
+  }
+  .modal-buttons button {
+    width: 100%;
+    font-size: 15px;
+  }
 }
