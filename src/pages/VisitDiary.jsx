@@ -147,7 +147,7 @@ export default function VisitDiary() {
   return (
     <div className="diary-container">
       {/* 🧭 絞り込み＋ソートバー */}
-      <div className="filter-bar">
+      <div className="diary-filter-bar">
         {/* 年 */}
         <select
           value={filters.year}

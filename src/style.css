@@ -819,7 +819,7 @@ h1 {
 }
 
 /* 絞り込みバー */
-.filter-bar {
+.diary-filter-bar {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -827,8 +827,8 @@ h1 {
   margin-bottom: 20px;
 }
 
-.filter-bar select,
-.filter-bar button {
+.diary-filter-bar select,
+.diary-filter-bar button {
   padding: 6px 10px;
   border-radius: 6px;
   border: 1px solid #ccc;
@@ -836,12 +836,12 @@ h1 {
   font-size: 14px;
 }
 
-.filter-bar button {
+.diary-filter-bar button {
   background-color: #fcd200;
   font-weight: bold;
   cursor: pointer;
 }
-.filter-bar button:hover {
+.diary-filter-bar button:hover {
   background-color: #ffd700;
 }
 
@@ -856,14 +856,14 @@ h1 {
   }
 
   /* フィルターバー縦並び */
-  .filter-bar {
+  .diary-filter-bar {
     flex-direction: column;
     align-items: stretch;
     gap: 8px;
     margin-bottom: 25px;
   }
-  .filter-bar select,
-  .filter-bar button {
+  .diary-filter-bar select,
+  .diary-filter-bar button {
     width: 100%;
     font-size: 15px;
     padding: 8px 10px;
