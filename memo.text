@@ -41,7 +41,7 @@ npm update                              # アップデート
 git pull
 
 git add .
-git commit -m "スタンプラリーページの作成"
+git commit -m "二郎ログページ作成"
 git push
 
 # 新しい機能ページ用のブランチ作成→作業→プッシュ

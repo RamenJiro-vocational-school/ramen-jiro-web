@@ -675,10 +675,41 @@ h1 {
   cursor: pointer;
   z-index: 1000;
   transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0;  
 }
 .log-button:hover {
   transform: scale(1.1);
 }
+
+/* 🐷ボタン画像に関する透明枠除去 */
+.log-button img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: none;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+/* フォーカス時も枠線・影なし */
+.log-button:focus,
+.log-button img:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+/* Safariのクリック時の青枠を強制無効化 */
+.log-button:focus-visible {
+  outline: none !important;
+}
+
 
 /* モーダル */
 .modal-overlay {
@@ -814,9 +845,7 @@ h1 {
   background-color: #ffd700;
 }
 
-/* ======================
-📱 スマホ対応
-====================== */
+/* スマホ対応 */
 @media screen and (max-width: 768px) {
   html, body {
     overflow-x: hidden;
@@ -881,7 +910,16 @@ h1 {
     z-index: 2000;
     box-shadow: 0 4px 10px rgba(0,0,0,0.25);
     background-color: transparent;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0;
   }
+
+  .log-button:focus {
+  outline: none;
+  box-shadow: none;
+}
 
   /* モーダル調整 */
   .modal-content {
