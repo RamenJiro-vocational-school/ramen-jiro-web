@@ -4,8 +4,11 @@ import stores from "../data/stores.json";
 
 export default function VisitDiary() {
   const [records, setRecords] = useState([]);
+  const [filteredRecords, setFilteredRecords] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [selectedRecord, setSelectedRecord] = useState(null);
+  const [filters, setFilters] = useState({ year: "", month: "", store: "" });
+
   const [newRecord, setNewRecord] = useState({
     date: "",
     store: "",
@@ -31,6 +34,7 @@ export default function VisitDiary() {
 
       const all = await db.getAll("visitRecords");
       setRecords(all);
+      setFilteredRecords(all);
     };
     initDB();
   }, []);
@@ -55,6 +59,7 @@ export default function VisitDiary() {
 
     const updated = [...records, record];
     setRecords(updated);
+    setFilteredRecords(updated);
     setShowModal(false);
     setNewRecord({
       date: "",
@@ -70,7 +75,9 @@ export default function VisitDiary() {
   const deleteRecord = async (id) => {
     const db = await openDB("jiroDiaryDB", 2);
     await db.delete("visitRecords", id);
-    setRecords(records.filter((r) => r.id !== id));
+    const updated = records.filter((r) => r.id !== id);
+    setRecords(updated);
+    setFilteredRecords(updated);
   };
 
   // --- Blob → URL変換 ---
@@ -83,27 +90,84 @@ export default function VisitDiary() {
 
   // --- カルーセル操作 ---
   const [currentIndex, setCurrentIndex] = useState(0);
+  const nextPhoto = (photos) => setCurrentIndex((prev) => (prev + 1) % photos.length);
+  const prevPhoto = (photos) => setCurrentIndex((prev) => (prev - 1 + photos.length) % photos.length);
 
-  const nextPhoto = (photos) => {
-    setCurrentIndex((prev) => (prev + 1) % photos.length);
-  };
-  const prevPhoto = (photos) => {
-    setCurrentIndex((prev) => (prev - 1 + photos.length) % photos.length);
-  };
-
-  // --- 詳細モーダルを開く ---
+  // --- 詳細モーダル ---
   const openDetailModal = (record) => {
     setSelectedRecord(record);
     setCurrentIndex(0);
   };
+  const closeDetailModal = () => setSelectedRecord(null);
 
-  // --- 詳細モーダルを閉じる ---
-  const closeDetailModal = () => {
-    setSelectedRecord(null);
-  };
+  // --- 絞り込み処理 ---
+  useEffect(() => {
+    let result = records;
+
+    if (filters.year) {
+      result = result.filter((r) => r.date?.startsWith(filters.year));
+    }
+    if (filters.month) {
+      result = result.filter(
+        (r) => r.date?.slice(5, 7) === filters.month.padStart(2, "0")
+      );
+    }
+    if (filters.store) {
+      result = result.filter((r) => r.store === filters.store);
+    }
+
+    setFilteredRecords(result);
+  }, [filters, records]);
+
+  // --- 絞り込みリセット ---
+  const resetFilters = () => setFilters({ year: "", month: "", store: "" });
 
   return (
     <div className="diary-container">
+      {/* 🧭 絞り込みバー */}
+      <div className="filter-bar">
+        <select
+          value={filters.year}
+          onChange={(e) => setFilters({ ...filters, year: e.target.value })}
+        >
+          <option value="">年を選択</option>
+          {Array.from(new Set(records.map((r) => r.date?.split("-")[0]))).map(
+            (year) =>
+              year && (
+                <option key={year} value={year}>
+                  {year}年
+                </option>
+              )
+          )}
+        </select>
+
+        <select
+          value={filters.month}
+          onChange={(e) => setFilters({ ...filters, month: e.target.value })}
+        >
+          <option value="">月を選択</option>
+          {Array.from({ length: 12 }, (_, i) => i + 1).map((m) => (
+            <option key={m} value={String(m).padStart(2, "0")}>
+              {m}月
+            </option>
+          ))}
+        </select>
+
+        <select
+          value={filters.store}
+          onChange={(e) => setFilters({ ...filters, store: e.target.value })}
+        >
+          <option value="">店舗を選択</option>
+          {stores.map((s, i) => (
+            <option key={i} value={s.name}>
+              {s.name}
+            </option>
+          ))}
+        </select>
+
+        <button onClick={resetFilters}>リセット</button>
+      </div>
+
       {/* 🐷 記録ボタン */}
       <div>
         <img
@@ -215,12 +279,11 @@ export default function VisitDiary() {
         <div className="modal-overlay" onClick={closeDetailModal}>
           <div
             className="modal-content"
-            onClick={(e) => e.stopPropagation()} // 背景クリックで閉じる
+            onClick={(e) => e.stopPropagation()}
           >
             <h2>{selectedRecord.store}</h2>
             <p>{selectedRecord.date}</p>
 
-            {/* カルーセル */}
             <div className="carousel-container">
               {selectedRecord.photos.length > 0 && (
                 <>
@@ -258,7 +321,13 @@ export default function VisitDiary() {
 
       {/* 一覧 */}
       <div className="diary-list">
-        {records.map((r) => {
+        {filteredRecords.length === 0 && (
+          <p style={{ textAlign: "center", width: "100%", color: "#888" }}>
+            該当する記録はありません。
+          </p>
+        )}
+
+        {filteredRecords.map((r) => {
           const urls = getPhotoURLs(r);
           return (
             <div

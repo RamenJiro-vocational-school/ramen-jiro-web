@@ -783,3 +783,32 @@ h1 {
 .carousel-buttons button:hover {
   background: #ffe100;
 }
+
+/* 絞り込みバー */
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filter-bar select,
+.filter-bar button {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  font-size: 14px;
+}
+
+.filter-bar button {
+  background-color: #fcd200;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.filter-bar button:hover {
+  background-color: #ffd700;
+}
