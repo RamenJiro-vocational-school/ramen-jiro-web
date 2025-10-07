@@ -5,6 +5,7 @@ import stores from "../data/stores.json";
 export default function VisitDiary() {
   const [records, setRecords] = useState([]);
   const [showModal, setShowModal] = useState(false);
+  const [selectedRecord, setSelectedRecord] = useState(null);
   const [newRecord, setNewRecord] = useState({
     date: "",
     store: "",
@@ -14,7 +15,7 @@ export default function VisitDiary() {
     photos: [],
   });
 
-  // --- IndexedDB 初期化（バージョン2へ） ---
+  // --- IndexedDB 初期化 ---
   useEffect(() => {
     const initDB = async () => {
       const db = await openDB("jiroDiaryDB", 2, {
@@ -34,13 +35,13 @@ export default function VisitDiary() {
     initDB();
   }, []);
 
-  // --- 写真アップロード（Blobとして保持） ---
+  // --- 写真アップロード ---
   const handlePhotoChange = (e) => {
     const files = Array.from(e.target.files).slice(0, 3); // 最大3枚
     setNewRecord({ ...newRecord, photos: files });
   };
 
-  // --- 保存（Blob形式） ---
+  // --- 保存 ---
   const saveRecord = async () => {
     if (!newRecord.date || !newRecord.store) {
       alert("日付と店舗名は必須です！");
@@ -74,11 +75,32 @@ export default function VisitDiary() {
 
   // --- Blob → URL変換 ---
   const getPhotoURLs = (record) => {
+    if (!record.photos) return [];
     return record.photos
       .filter((p) => p instanceof Blob || p instanceof File)
       .map((blob) => URL.createObjectURL(blob));
   };
 
+  // --- カルーセル操作 ---
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextPhoto = (photos) => {
+    setCurrentIndex((prev) => (prev + 1) % photos.length);
+  };
+  const prevPhoto = (photos) => {
+    setCurrentIndex((prev) => (prev - 1 + photos.length) % photos.length);
+  };
+
+  // --- 詳細モーダルを開く ---
+  const openDetailModal = (record) => {
+    setSelectedRecord(record);
+    setCurrentIndex(0);
+  };
+
+  // --- 詳細モーダルを閉じる ---
+  const closeDetailModal = () => {
+    setSelectedRecord(null);
+  };
 
   return (
     <div className="diary-container">
@@ -92,7 +114,7 @@ export default function VisitDiary() {
         />
       </div>
 
-      {/* モーダル */}
+      {/* モーダル（新規登録） */}
       {showModal && (
         <div className="modal-overlay">
           <div className="modal-content">
@@ -188,12 +210,63 @@ export default function VisitDiary() {
         </div>
       )}
 
-      {/* 記録一覧 */}
+      {/* 📸 詳細モーダル（カルーセルつき） */}
+      {selectedRecord && (
+        <div className="modal-overlay" onClick={closeDetailModal}>
+          <div
+            className="modal-content"
+            onClick={(e) => e.stopPropagation()} // 背景クリックで閉じる
+          >
+            <h2>{selectedRecord.store}</h2>
+            <p>{selectedRecord.date}</p>
+
+            {/* カルーセル */}
+            <div className="carousel-container">
+              {selectedRecord.photos.length > 0 && (
+                <>
+                  <img
+                    src={URL.createObjectURL(
+                      selectedRecord.photos[currentIndex]
+                    )}
+                    alt="photo"
+                    className="carousel-photo"
+                  />
+                  {selectedRecord.photos.length > 1 && (
+                    <div className="carousel-buttons">
+                      <button onClick={() => prevPhoto(selectedRecord.photos)}>
+                        ◀
+                      </button>
+                      <button onClick={() => nextPhoto(selectedRecord.photos)}>
+                        ▶
+                      </button>
+                    </div>
+                  )}
+                </>
+              )}
+            </div>
+
+            <p>メニュー：{selectedRecord.menu}</p>
+            <p>コール：{selectedRecord.call}</p>
+            <p>感想：{selectedRecord.memo}</p>
+
+            <div className="modal-buttons">
+              <button onClick={closeDetailModal}>閉じる</button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* 一覧 */}
       <div className="diary-list">
         {records.map((r) => {
           const urls = getPhotoURLs(r);
           return (
-            <div key={r.id} className="diary-card">
+            <div
+              key={r.id}
+              className="diary-card"
+              onClick={() => openDetailModal(r)}
+              style={{ cursor: "pointer" }}
+            >
               {urls[0] && (
                 <img src={urls[0]} alt={r.store} className="diary-thumb" />
               )}
@@ -209,7 +282,10 @@ export default function VisitDiary() {
                   cursor: "pointer",
                   marginTop: "6px",
                 }}
-                onClick={() => deleteRecord(r.id)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  deleteRecord(r.id);
+                }}
               >
                 🗑️ 削除
               </button>
