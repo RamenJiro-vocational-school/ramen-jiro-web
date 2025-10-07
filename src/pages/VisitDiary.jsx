@@ -8,6 +8,7 @@ export default function VisitDiary() {
   const [showModal, setShowModal] = useState(false);
   const [selectedRecord, setSelectedRecord] = useState(null);
   const [filters, setFilters] = useState({ year: "", month: "", store: "" });
+  const [sortOption, setSortOption] = useState("newest"); // 🆕 ソート設定
 
   const [newRecord, setNewRecord] = useState({
     date: "",
@@ -100,10 +101,11 @@ export default function VisitDiary() {
   };
   const closeDetailModal = () => setSelectedRecord(null);
 
-  // --- 絞り込み処理 ---
+  // --- 絞り込み＋ソート処理 ---
   useEffect(() => {
     let result = records;
 
+    // 絞り込み
     if (filters.year) {
       result = result.filter((r) => r.date?.startsWith(filters.year));
     }
@@ -116,16 +118,37 @@ export default function VisitDiary() {
       result = result.filter((r) => r.store === filters.store);
     }
 
+    // ソート
+    result = [...result].sort((a, b) => {
+      switch (sortOption) {
+        case "newest":
+          return b.date.localeCompare(a.date); // 日付新しい順
+        case "oldest":
+          return a.date.localeCompare(b.date); // 日付古い順
+        case "storeAsc":
+          return a.store.localeCompare(b.store, "ja");
+        case "storeDesc":
+          return b.store.localeCompare(a.store, "ja");
+        case "menuAsc":
+          return a.menu.localeCompare(b.menu, "ja");
+        case "menuDesc":
+          return b.menu.localeCompare(a.menu, "ja");
+        default:
+          return 0;
+      }
+    });
+
     setFilteredRecords(result);
-  }, [filters, records]);
+  }, [filters, records, sortOption]);
 
   // --- 絞り込みリセット ---
   const resetFilters = () => setFilters({ year: "", month: "", store: "" });
 
   return (
     <div className="diary-container">
-      {/* 🧭 絞り込みバー */}
+      {/* 🧭 絞り込み＋ソートバー */}
       <div className="filter-bar">
+        {/* 年 */}
         <select
           value={filters.year}
           onChange={(e) => setFilters({ ...filters, year: e.target.value })}
@@ -141,6 +164,7 @@ export default function VisitDiary() {
           )}
         </select>
 
+        {/* 月 */}
         <select
           value={filters.month}
           onChange={(e) => setFilters({ ...filters, month: e.target.value })}
@@ -153,6 +177,7 @@ export default function VisitDiary() {
           ))}
         </select>
 
+        {/* 店舗 */}
         <select
           value={filters.store}
           onChange={(e) => setFilters({ ...filters, store: e.target.value })}
@@ -163,6 +188,15 @@ export default function VisitDiary() {
               {s.name}
             </option>
           ))}
+        </select>
+
+        {/* ソート */}
+        <select
+          value={sortOption}
+          onChange={(e) => setSortOption(e.target.value)}
+        >
+          <option value="newest">日付（新しい順）</option>
+          <option value="oldest">日付（古い順）</option>
         </select>
 
         <button onClick={resetFilters}>リセット</button>
@@ -178,7 +212,7 @@ export default function VisitDiary() {
         />
       </div>
 
-      {/* モーダル（新規登録） */}
+      {/* 📝 モーダル（新規登録） */}
       {showModal && (
         <div className="modal-overlay">
           <div className="modal-content">
@@ -319,7 +353,7 @@ export default function VisitDiary() {
         </div>
       )}
 
-      {/* 一覧 */}
+      {/* 🗂 一覧 */}
       <div className="diary-list">
         {filteredRecords.length === 0 && (
           <p style={{ textAlign: "center", width: "100%", color: "#888" }}>
