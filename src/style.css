@@ -675,10 +675,13 @@ h1 {
   cursor: pointer;
   z-index: 1000;
   transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
+  background-color: transparent !important;
   background: none;
   border: none;
   outline: none;
-  padding: 0;  
+  padding: 0;
+  box-shadow: none !important;
+  appearance: none;
 }
 .log-button:hover {
   transform: scale(1.1);
@@ -695,6 +698,10 @@ h1 {
   margin: 0;
   padding: 0;
   box-shadow: none;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 /* フォーカス時も枠線・影なし */
