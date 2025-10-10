@@ -65,7 +65,7 @@
   "address": "〒153-0063 東京都目黒区目黒３丁目７−２",
   "lat": 35.63440869736793,
   "lng": 139.70710982883506,
-  "map_url":"",
+  "map_url":"https://www.google.com/maps/place/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E+%E7%9B%AE%E9%BB%92%E5%BA%97/@35.6342125,139.7070991,17z/data=!3m1!4b1!4m6!3m5!1s0x60188b2350089adb:0xa370d79467b34dd!8m2!3d35.6342125!4d139.7070991!16s%2Fg%2F1tcz_hz7?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D",
   "access": "JR目黒駅より徒歩14分, 東急東横線・東京メトロ日比谷線中目黒駅より徒歩9分",
   "sns": {
     "twitter": "",
@@ -107,7 +107,7 @@
   "address": "〒182-0002 東京都調布市仙川町１丁目１０−１７",
   "lat": 35.662002714034855,
   "lng": 139.583875942328,
-  "map_url":"",
+  "map_url":"https://www.google.com/maps/place/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E+%E4%BB%99%E5%B7%9D%E5%BA%97/@35.661763,139.5838974,17z/data=!3m1!4b1!4m6!3m5!1s0x6018f1bb8a2df32b:0x34d09cbb0ff5211e!8m2!3d35.661763!4d139.5838974!16s%2Fg%2F1tgcmb5h?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D",
   "access": "京王線仙川駅より徒歩2分",
   "sns": {
     "twitter": "https://x.com/senjiro26",
@@ -149,7 +149,7 @@
     "address": "〒160-0021 東京都新宿区歌舞伎町２丁目３７−５ 日新ビル 1F",
     "lat": 35.696312188734154,
     "lng": 139.7019962153425,
-    "map_url":"",
+    "map_url":"https://www.google.com/maps/place/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E+%E6%96%B0%E5%AE%BF%E6%AD%8C%E8%88%9E%E4%BC%8E%E7%94%BA%E5%BA%97/@35.6961205,139.7019533,17z/data=!3m2!4b1!5s0x60188cd81a17acc5:0x81d4dc5580f61dac!4m6!3m5!1s0x60188cd81a1c0001:0x931027d95df214be!8m2!3d35.6961205!4d139.7019533!16s%2Fg%2F11cs46shkh?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D",
     "access": "JR新宿駅より徒歩7分, 西武新宿駅より徒歩4分",
     "sns": {
       "twitter": "https://x.com/kabujiikeji",
@@ -191,7 +191,7 @@
     "address": "〒140-0001 東京都品川区北品川１丁目１８−５",
     "lat": 35.624090273052744,
     "lng": 139.7430883509254,
-    "map_url":"",
+    "map_url":"https://www.google.com/maps/place/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E+%E5%93%81%E5%B7%9D%E5%BA%97/@35.6239769,139.7430508,17z/data=!4m6!3m5!1s0x60188a42d87c46e3:0xaad87cd776bd63ee!8m2!3d35.6239769!4d139.7430508!16s%2Fg%2F1tjxfn1z?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D",
     "access": "JR品川駅より徒歩10分, 京急北品川駅より徒歩7分",
     "sns": {
       "twitter": "https://x.com/shinagawa26",
@@ -234,7 +234,7 @@
     "address": "〒160-0023 東京都新宿区西新宿７丁目５−５",
     "lat": 35.696544388176, 
     "lng": 139.6983318932537,
-    "map_url":"",
+    "map_url":"https://www.google.com/maps/place/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E+%E6%96%B0%E5%AE%BF%E5%B0%8F%E6%BB%9D%E6%A9%8B%E9%80%9A%E3%82%8A%E5%BA%97/@35.6963527,139.6983158,17z/data=!3m1!4b1!4m6!3m5!1s0x60188d29c95985c9:0x288cbe322252c143!8m2!3d35.6963527!4d139.6983158!16s%2Fg%2F1tp_6cwq?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D",
     "access": "JR大久保駅より徒歩6分, JR新宿駅より徒歩8分, 新宿西口駅より徒歩5分",
     "sns": {
       "twitter": "https://x.com/jiro_otakibasi",
@@ -277,7 +277,7 @@
     "address": "〒155-0033 東京都世田谷区代田５丁目２９−５ 櫻井ビル",
     "lat": 35.6620612035356, 
     "lng": 139.66041023558208,
-    "map_url":"",
+    "map_url":"https://www.google.com/maps/place/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E+%E7%92%B0%E4%B8%83%E6%96%B0%E6%96%B0%E4%BB%A3%E7%94%B0%E5%BA%97/@35.6619043,139.6604156,17z/data=!3m1!4b1!4m6!3m5!1s0x6018f30d5535aaab:0x141096368a8ff1d9!8m2!3d35.6619043!4d139.6604156!16s%2Fg%2F11b6cmygr6?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D",
     "access": "京王井の頭線新代田駅より徒歩2分, 小田急小田原線世田谷代田駅より徒歩7分",
     "sns": {
       "twitter": "https://x.com/26shinshindaita",
@@ -319,7 +319,7 @@
     "address": "〒192-0355 東京都八王子市堀之内２丁目１３−１６",
     "lat": 35.629618626439594, 
     "lng": 139.40138345092544,
-    "map_url":"",
+    "map_url":"https://www.google.com/maps/place/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E+%E5%85%AB%E7%8E%8B%E5%AD%90%E9%87%8E%E7%8C%BF%E8%A1%97%E9%81%93%E5%BA%972/@35.6294791,139.4013459,17z/data=!3m1!4b1!4m6!3m5!1s0x6018e2de0d196fcd:0x2f2ab0be708c74f7!8m2!3d35.6294791!4d139.4013459!16s%2Fg%2F1tdjx0ky?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D",
     "access": "京王相模原線京王堀之内駅より徒歩15分",
     "sns": {
       "twitter": "https://x.com/jiro_yaenkaido2",
@@ -361,7 +361,7 @@
     "address": "〒171-0022 東京都豊島区南池袋２丁目２７−１７",
     "lat": 35.72841484710039,
     "lng": 139.71394201534093,
-    "map_url":"",
+    "map_url":"https://www.google.com/maps/place/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E+%E6%B1%A0%E8%A2%8B%E6%9D%B1%E5%8F%A3%E5%BA%97/@35.7282363,139.7138991,17z/data=!3m2!4b1!5s0x60188d68612045d1:0x325fabeb5cf4d5a6!4m6!3m5!1s0x60188d6861258a09:0x27efd60423574748!8m2!3d35.7282363!4d139.7138991!16s%2Fg%2F1vl5gsbs?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D",
     "access": "JR池袋駅より徒歩6分, 東京メトロ有楽町線東池袋駅より徒歩7分",
     "sns": {
       "twitter": "https://x.com/ikejikabuji",
@@ -404,7 +404,7 @@
     "address": "〒136-0071 東京都江東区亀戸４丁目３５−１７",
     "lat": 35.70209371858455,
     "lng": 139.82668815767045,
-    "map_url":"",
+    "map_url":"https://www.google.com/maps/place/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E+%E4%BA%80%E6%88%B8%E5%BA%97/@35.7019064,139.8266667,17z/data=!3m1!4b1!4m6!3m5!1s0x601888cf75d8cb09:0x76d3db28c2bd5155!8m2!3d35.7019064!4d139.8266667!16s%2Fg%2F1td47z5q?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D",
     "access": "JR亀戸駅より徒歩9分, 東武亀戸線亀戸水神駅より徒歩11分",
     "sns": {
       "twitter": "https://x.com/jiro_kame_rjk, https://x.com/jiro_kame",
@@ -446,7 +446,7 @@
     "address": "〒210-0001 神奈川県川崎市川崎区本町２丁目１０−１ コーポ本町",
     "lat": 35.53510972584535,
     "lng": 139.70527852883527,
-    "map_url":"",
+    "map_url":"https://www.google.com/maps/place/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E+%E4%BA%AC%E6%80%A5%E5%B7%9D%E5%B4%8E%E5%BA%97/@35.5349744,139.7052678,17z/data=!3m1!4b1!4m6!3m5!1s0x6018609667535e5f:0x1ed6416860aa9096!8m2!3d35.5349744!4d139.7052678!16s%2Fg%2F11_sbbc6c?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D",
     "access": "JR川崎駅より徒歩12分, 京急川崎駅より徒歩9分",
     "sns": {
       "twitter": "",
@@ -487,7 +487,7 @@
     "address": "〒183-0022 東京都府中市宮西町１丁目１５−５ 関野屋ビル 1Ｆ",
     "lat": 35.67232151457516,
     "lng": 139.47730812883523,
-    "map_url":"",
+    "map_url":"https://www.google.com/maps/place/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E+%E5%BA%9C%E4%B8%AD%E5%BA%97/@35.6720644,139.4772974,17z/data=!3m2!4b1!5s0x6018e4fa9cfdebe9:0xfe41d14653706002!4m6!3m5!1s0x6018e4fa9dcda6c1:0xf85121c22c0f96c5!8m2!3d35.6720644!4d139.4772974!16s%2Fg%2F11bw4vlwzn?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D",
     "access": "京王線府中駅より徒歩4分, JR府中本町駅より徒歩12分",
     "sns": {
       "twitter": "https://x.com/jiro_fuchu",
@@ -529,7 +529,7 @@
     "address": "〒271-0091 千葉県松戸市本町１７−９",
     "lat": 35.7861525208932, 
     "lng": 139.89942120185512,
-    "map_url":"",
+    "map_url":"https://www.google.com/maps/place/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E+%E6%9D%BE%E6%88%B8%E9%A7%85%E5%89%8D%E5%BA%97/@35.7859654,139.8993461,17z/data=!3m1!4b1!4m6!3m5!1s0x601884e331132685:0x11c8da566965272a!8m2!3d35.7859654!4d139.8993461!16s%2Fg%2F11ckq_4wq2?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D",
     "access": "JR松戸駅駅より徒歩8分",
     "sns": {
       "twitter": "https://x.com/matsudojiro3",
@@ -571,7 +571,7 @@
   "address": "〒193-0942 東京都八王子市椚田町５１３−９",
   "lat": 35.63915378885148,
   "lng": 139.31227117301864,
-  "map_url":"",
+  "map_url":"https://www.google.com/maps/place/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E+%E3%82%81%E3%81%98%E3%82%8D%E5%8F%B0%E5%BA%97/@35.6390012,139.3122068,17z/data=!3m1!4b1!4m6!3m5!1s0x60191c3ae083c955:0xf17416369cdeb7e!8m2!3d35.6390012!4d139.3122068!16s%2Fg%2F11g7z7g9d5?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D",
   "access": "京王線めじろ台駅より徒歩9分",
   "sns": {
     "twitter": "https://x.com/mejirodai_jiro",
@@ -613,7 +613,7 @@
   "address": "〒167-0051 東京都杉並区荻窪４丁目３３−１ 荻窪白馬ビル",
   "lat": 35.703802989939085,
   "lng": 139.6262865423271,
-  "map_url":"",
+  "map_url":"https://www.google.com/maps/place/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E+%E8%8D%BB%E7%AA%AA%E5%BA%97/@35.7036331,139.626308,17z/data=!3m1!4b1!4m6!3m5!1s0x6018edf58c4fad37:0x928ff4f5c21599ec!8m2!3d35.7036331!4d139.626308!16s%2Fg%2F11_tyqz5z?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D",
   "access": "JR荻窪駅より徒歩8分",
   "sns": {
     "twitter": "https://x.com/ogkb_jiro",
@@ -655,7 +655,7 @@
   "address": "〒158-0093 東京都世田谷区上野毛１丁目２６−１６ 世和マンション",
   "lat": 35.612692472922454,
   "lng": 139.63897097116356,
-  "map_url":"",
+  "map_url":"https://www.google.com/maps/place/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E+%E4%B8%8A%E9%87%8E%E6%AF%9B%E5%BA%97/@35.6124875,139.6389817,17z/data=!3m1!4b1!4m6!3m5!1s0x6018f4435d01c851:0x99b07714ed1700fb!8m2!3d35.6124875!4d139.6389817!16s%2Fg%2F12qgrl2lg?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D",
   "access": "東急大井町線上野毛駅より徒歩1分",
   "sns": {
     "twitter": "https://x.com/KaminogeJiro",
@@ -697,7 +697,7 @@
   "address": "〒274-0072 千葉県船橋市三山２丁目１−１１",
   "lat": 35.69175207014533,
   "lng": 140.04962542883644,
-  "map_url":"",
+  "map_url":"https://www.google.com/maps/place/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E+%E4%BA%AC%E6%88%90%E5%A4%A7%E4%B9%85%E4%BF%9D%E5%BA%97/@35.6915473,140.0496147,17z/data=!3m1!4b1!4m6!3m5!1s0x602280527862b0af:0xc3b5692def084a65!8m2!3d35.6915473!4d140.0496147!16s%2Fg%2F1tfwq27x?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D",
   "access": "京成本線京成大久保駅より徒歩8分",
   "sns": {
     "twitter": "https://x.com/mayunabegumi",
@@ -739,7 +739,7 @@
   "address": "〒132-0024 東京都江戸川区一之江８丁目３−４",
   "lat": 35.684301603720144,
   "lng": 139.88198328650932,
-  "map_url":"",
+  "map_url":"https://www.google.com/maps/place/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E+%E7%92%B0%E4%B8%83%E4%B8%80%E4%B9%8B%E6%B1%9F%E5%BA%97/@35.6840881,139.8819511,17z/data=!3m1!4b1!4m6!3m5!1s0x601887bbb353efff:0x84d70a59076df1af!8m2!3d35.6840881!4d139.8819511!16s%2Fg%2F11b6gjsr7k?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D",
   "access": "都営新宿線一之江駅より徒歩3分",
   "sns": {
     "twitter": "https://x.com/ichinoejiro",
@@ -781,7 +781,7 @@
   "address": "〒252-0303 神奈川県相模原市南区相模大野６丁目１４−９",
   "lat": 35.53015315919951, 
   "lng": 139.43289318650932,
-  "map_url":"",
+  "map_url":"https://www.google.com/maps/place/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E+%E7%9B%B8%E6%A8%A1%E5%A4%A7%E9%87%8E%E5%BA%97/@35.5299829,139.432861,17z/data=!3m1!4b1!4m6!3m5!1s0x6018fec694a7be7d:0xb07f5e16987f2c16!8m2!3d35.5299829!4d139.432861!16s%2Fg%2F11b7dt10mc?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D",
   "access": "小田急小田原線相模大野駅より徒歩8分",
   "sns": {
     "twitter": "https://x.com/sumo_jiro",
@@ -823,7 +823,7 @@
   "address": "〒231-0033 神奈川県横浜市中区長者町６丁目９４−９４ オムニビル 2階",
   "lat": 35.44213984575981,
   "lng": 139.63075857116357,
-  "map_url":"",
+  "map_url":"https://www.google.com/maps/place/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E+%E6%A8%AA%E6%B5%9C%E9%96%A2%E5%86%85%E5%BA%97/@35.4419694,139.6307693,17z/data=!3m2!4b1!5s0x60185cf33916645f:0x745e2f30e9d31f43!4m6!3m5!1s0x60185cf36aec8c33:0x268e0e219bc2ba83!8m2!3d35.4419694!4d139.6307693!16s%2Fg%2F11b6v7wdyn?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D",
   "access": "横浜市営地下鉄ブルーライン伊勢佐木長者町駅より徒歩4分, JR関内駅より徒歩8分",
   "sns": {
     "twitter": "https://x.com/kannaijiro",
@@ -865,7 +865,7 @@
   "address": "〒101-0051 東京都千代田区神田神保町１丁目２１−４",
   "lat": 35.695393787270355,
   "lng": 139.76080567116352,
-  "map_url":"",
+  "map_url":"https://www.google.com/maps/place/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E+%E7%A5%9E%E7%94%B0%E7%A5%9E%E4%BF%9D%E7%94%BA%E5%BA%97/@35.6951716,139.7608164,17z/data=!3m1!4b1!4m6!3m5!1s0x60188c14ffffffff:0x3d75e08888756b5f!8m2!3d35.6951716!4d139.7608164!16s%2Fg%2F11b6p_bcrk?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D",
   "access": "神保町駅より徒歩5分, 小川町駅より徒歩10分, 新御茶ノ水駅より徒歩10分",
   "sns": {
     "twitter": "https://x.com/jbc_ramen_jiro",
@@ -906,7 +906,7 @@
   "address": "〒133-0057 東京都江戸川区３丁目３１−１４",
   "lat": 35.735111305416424,
   "lng": 139.8800516153458,
-  "map_url":"",
+  "map_url":"https://www.google.com/maps/place/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E%E5%B0%8F%E5%B2%A9%E5%BA%97/@35.7349589,139.8800087,17z/data=!3m1!4b1!4m6!3m5!1s0x601885deca1e2881:0x96e79d931a3bc8d2!8m2!3d35.7349589!4d139.8800087!16s%2Fg%2F11bwn5wvl7?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D",
   "access": "JR小岩駅より徒歩4分",
   "sns": {
     "twitter": "https://x.com/koiwajiro",
@@ -948,7 +948,7 @@
   "address": "〒188-0001 東京都西東京市谷戸町３丁目２７−２４ ひばりが丘プラザ ひばりヶ丘プラザ1F",
   "lat": 35.7501453056251,
   "lng": 139.5435416423271,
-  "map_url":"",
+  "map_url":"https://www.google.com/maps/place/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E+%E3%81%B2%E3%81%B0%E3%82%8A%E3%83%B6%E4%B8%98%E9%A7%85%E5%89%8D%E5%BA%97/@35.7499581,139.5435631,17z/data=!3m2!4b1!5s0x6018e8b6d7d1c641:0xa861ccb47b04f688!4m6!3m5!1s0x6018e8b6d5f74b73:0xc2edc22815414c46!8m2!3d35.7499581!4d139.5435631!16s%2Fg%2F12qf75q7k?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D",
   "access": "西武池袋線ひばりが丘駅より徒歩5分",
   "sns": {
     "twitter": "https://x.com/aarf0xvdbxkwd7o",
@@ -990,7 +990,7 @@
   "address": "〒321-0225 栃木県下都賀郡壬生町本丸２丁目１５−６７",
   "lat": 36.42315785647314,
   "lng": 139.79486191349307,
-  "map_url":"",
+  "map_url":"https://www.google.com/maps/place/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E+%E6%A0%83%E6%9C%A8%E8%A1%97%E9%81%93%E5%BA%97/@36.4228816,139.7948941,17z/data=!3m1!4b1!4m6!3m5!1s0x601f447317331fdd:0x9626e70cecf7b5a!8m2!3d36.4228816!4d139.7948941!16s%2Fg%2F11_rg5h1n?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D",
   "access": "東武宇都宮線壬生駅より徒歩18分, 北関東自動車道都賀ICより車で10分",
   "sns": {
     "twitter": "https://x.com/tochigikaidoten",
@@ -1032,7 +1032,7 @@
   "address": "〒190-0023 東京都立川市柴崎町２丁目１０−１",
   "lat": 35.69674882695001,
   "lng": 139.40957598650692,
-  "map_url":"",
+  "map_url":"https://www.google.com/maps/place/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E+%E7%AB%8B%E5%B7%9D%E5%BA%97/@35.696531,139.4095438,17z/data=!4m6!3m5!1s0x6018e179bc2270cd:0xcd2be6d1c170694b!8m2!3d35.696531!4d139.4095438!16s%2Fg%2F11_rc0s9f?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D",
   "access": "JR立川駅より徒歩8分, 多摩モノレール立川南駅より徒歩5分",
   "sns": {
     "twitter": "https://x.com/jirotachikawa",
@@ -1073,7 +1073,7 @@
   "address": "〒120-0038 東京都足立区千住橋戸町１０−８",
   "lat": 35.742737869017716,
   "lng": 139.79703381349307,
-  "map_url":"",
+  "map_url":"https://www.google.com/maps/place/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E+%E5%8D%83%E4%BD%8F%E5%A4%A7%E6%A9%8B%E9%A7%85%E5%89%8D%E5%BA%97/@35.742555,139.797066,17z/data=!3m1!4b1!4m6!3m5!1s0x60188e5cf29984af:0x70e6fe73ed5fab63!8m2!3d35.742555!4d139.797066!16s%2Fg%2F12qfsp21t?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D",
   "access": "京成本線千住大橋駅より徒歩30秒",
   "sns": {
     "twitter": "https://x.com/senjujirou26",
@@ -1115,7 +1115,7 @@
   "address": "〒277-0872 千葉県柏市十余二２４９−５",
   "lat": 35.882413225900756,
   "lng": 139.95922085767128,
-  "map_url":"",
+  "map_url":"https://www.google.com/maps/place/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E+%E6%9F%8F%E5%BA%97/@35.8822046,139.9591994,17z/data=!3m2!4b1!5s0x60189c5d25dc1955:0xaf4d361e4e14bfeb!4m6!3m5!1s0x60189d5afdd15d27:0x1d42b10d3c7f9b47!8m2!3d35.8822046!4d139.9591994!16s%2Fg%2F11sdzz9rc6?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D",
   "access": "つくばエクスプレス柏の葉キャンパス駅より徒歩26分, 東武バス「南翁原」停留所より徒歩4分",
   "sns": {
     "twitter": "https://x.com/genkimoriya",
@@ -1157,7 +1157,7 @@
   "address": "〒251-0053 神奈川県藤沢市本町１丁目１０−１４",
   "lat": 35.34324813375829,
   "lng": 139.48223292883566,
-  "map_url":"",
+  "map_url":"https://www.google.com/maps/place/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E+%E6%B9%98%E5%8D%97%E8%97%A4%E6%B2%A2%E5%BA%97/@35.3430556,139.4822222,17z/data=!3m1!4b1!4m6!3m5!1s0x60184e2de1fd623f:0xf141c83d263d9aac!8m2!3d35.3430556!4d139.4822222!16s%2Fg%2F11_q1jncx?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D",
   "access": "JR藤沢駅より徒歩10分, 小田急江ノ島線藤沢本町駅より徒歩12分",
   "sns": {
     "twitter": "https://x.com/fujirow26",
@@ -1199,7 +1199,7 @@
   "address": "〒174-0046 東京都板橋区蓮根３丁目９−７",
   "lat": 35.787002170500315,
   "lng": 139.6748838,
-  "map_url":"",
+  "map_url":"https://www.google.com/maps/place/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E+%E8%A5%BF%E5%8F%B0%E9%A7%85%E5%89%8D%E5%BA%97/@35.7868107,139.6748838,17z/data=!3m2!4b1!5s0x6018ecbcb7c67e21:0x2b20527a7b1eed77!4m6!3m5!1s0x6018ecbcbf221d6d:0x57c9acb4d83f1bc4!8m2!3d35.7868107!4d139.6748838!16s%2Fg%2F11c4414wnw?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D",
   "access": "都営三田線西代駅より徒歩1分",
   "sns": {
     "twitter": "https://x.com/jiro_nishidai",
@@ -1241,7 +1241,7 @@
   "address": "〒226-0014 神奈川県横浜市緑区台村町３０９番地１ 土井ビル",
   "lat": 35.51328702696464,
   "lng": 139.5387242018495,
-  "map_url":"",
+  "map_url":"https://www.google.com/maps/place/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E+%E4%B8%AD%E5%B1%B1%E9%A7%85%E5%89%8D%E5%BA%97/@35.5130687,139.5386491,17z/data=!3m2!4b1!5s0x6018580f8b8d58bb:0xe37496f78b44eb9a!4m6!3m5!1s0x6018580fc1ead1c5:0x3fb1ec90f9317ac3!8m2!3d35.5130687!4d139.5386491!16s%2Fg%2F1vrq9lrq?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D",
   "access": "JR中山駅より徒歩3分",
   "sns": {
     "twitter": "https://x.com/NKYMJIRO",
@@ -1284,7 +1284,7 @@
   "address": "〒980-0811 宮城県仙台市青葉区一番町２丁目５−３２ 第一観光ビル 1階",
   "lat": 38.25954766433661,
   "lng": 140.87207777116436,
-  "map_url":"",
+  "map_url":"https://www.google.com/maps/place/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E+%E4%BB%99%E5%8F%B0%E5%BA%972/@38.2593876,140.8720885,17z/data=!3m2!4b1!5s0x5f8a283c4a795f03:0x87b2d8000e49678!4m6!3m5!1s0x5f8a29005907335b:0x357755cd6be343e4!8m2!3d38.2593876!4d140.8720885!16s%2Fg%2F11x5__b4h1?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D",
   "access": "仙台市地下鉄東西線青葉通一番町駅より徒歩1分, JR仙台駅より徒歩14分",
   "sns": {
     "twitter": "https://x.com/jiro_sendai1023",
@@ -1326,7 +1326,7 @@
   "address": "〒060-0806 北海道札幌市北区北６条西８丁目８−１１",
   "lat": 43.067589686693154,
   "lng": 141.34393721534258,
-  "map_url":"",
+  "map_url":"https://www.google.com/maps/place/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E+%E6%9C%AD%E5%B9%8C%E5%BA%97/@43.0673859,141.3438943,17z/data=!3m1!4b1!4m6!3m5!1s0x5f0b29a04711c4e1:0x64165db7f8da7806!8m2!3d43.0673859!4d141.3438943!16s%2Fg%2F11b61pxl16?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D",
   "access": "JR札幌駅より徒歩10分",
   "sns": {
     "twitter": "https://x.com/jiro_sapporo_",
@@ -1368,7 +1368,7 @@
   "address": "〒965-0041 福島県会津若松市駅前町６−３１",
   "lat": 37.50688041863607,
   "lng": 139.93142902883565,
-  "map_url":"",
+  "map_url":"https://www.google.com/maps/place/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E+%E4%BC%9A%E6%B4%A5%E8%8B%A5%E6%9D%BE%E9%A7%85%E5%89%8D%E5%BA%97/@37.5066336,139.9314183,17z/data=!3m1!4b1!4m6!3m5!1s0x5ff5535202509c19:0x7a1ebf0faf6afcc9!8m2!3d37.5066336!4d139.9314183!16s%2Fg%2F11b6c5nwfb?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D",
   "access": "JR会津若松駅より徒歩3分",
   "sns": {
     "twitter": "https://x.com/aizu_jiro",
@@ -1409,7 +1409,7 @@
   "address": "〒950-0088 新潟県新潟市中央区万代５丁目２−８",
   "lat": 37.91741224317209,
   "lng": 139.0601610018495,
-  "map_url":"",
+  "map_url":"https://www.google.com/maps/place/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E+%E6%96%B0%E6%BD%9F%E5%BA%97/@37.9172345,139.0600859,17z/data=!3m1!4b1!4m6!3m5!1s0x5ff4c98e86b12893:0x4c7e94288e2c6c71!8m2!3d37.9172345!4d139.0600859!16s%2Fg%2F11bwnygpqy?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D",
   "access": "JR新潟駅より徒歩9分",
   "sns": {
     "twitter": "",
@@ -1451,7 +1451,7 @@
   "address": "〒350-1126 埼玉県川越市旭町１丁目４−１５",
   "lat": 35.90285653847015,
   "lng": 139.47664108650693,
-  "map_url":"",
+  "map_url":"https://www.google.com/maps/place/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E+%E5%B7%9D%E8%B6%8A%E5%BA%97/@35.9027088,139.4766089,17z/data=!3m1!4b1!4m6!3m5!1s0x6018da4df1a3f30f:0xd9604d35b536b4f0!8m2!3d35.9027088!4d139.4766089!16s%2Fg%2F11c37hbb1z?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D",
   "access": "JR川越駅より徒歩12分",
   "sns": {
     "twitter": "https://x.com/kwge26",
@@ -1493,7 +1493,7 @@
   "address": "〒606-8117 京都府京都市左京区一乗寺里ノ前町４",
   "lat": 35.044104746999324,
   "lng": 135.78756694417825,
-  "map_url":"",
+  "map_url":"https://www.google.com/maps/place/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E+%E4%BA%AC%E9%83%BD%E5%BA%97/@35.0438588,135.7875133,17z/data=!3m1!4b1!4m6!3m5!1s0x6001084ba7d50001:0xa2a8eb4a1f3a0460!8m2!3d35.0438588!4d135.7875133!16s%2Fg%2F11f3d26m20?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D",
   "access": "叡山電鉄叡山本線一乗寺駅より徒歩30秒, 地下鉄烏丸線松ヶ崎駅より徒歩22分",
   "sns": {
     "twitter": "https://x.com/jiro_kyoto",
@@ -1534,7 +1534,7 @@
   "address": "〒343-0024 埼玉県越谷市越ヶ谷２丁目３−７",
   "lat": 35.89034739688638,
   "lng": 139.78764157116433,
-  "map_url":"",
+  "map_url":"https://www.google.com/maps/place/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E+%E8%B6%8A%E8%B0%B7%E5%BA%97/@35.8901301,139.7876523,17z/data=!3m1!4b1!4m6!3m5!1s0x6018975d9b90dfb5:0xb0fc633d8f192609!8m2!3d35.8901301!4d139.7876523!16s%2Fg%2F11h3fqtnwy?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D",
   "access": "東武伊勢崎線越谷駅より徒歩4分",
   "sns": {
     "twitter": "https://x.com/ksgy26",
@@ -1576,7 +1576,7 @@
   "address": "〒371-0022 群馬県前橋市千代田町４丁目１２−３",
   "lat": 36.392562864606724,
   "lng": 139.07094887116435,
-  "map_url":"",
+  "map_url":"https://www.google.com/maps/place/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E+%E5%89%8D%E6%A9%8B%E5%8D%83%E4%BB%A3%E7%94%B0%E7%94%BA%E5%BA%97/@36.3923815,139.0709596,17z/data=!3m1!4b1!4m6!3m5!1s0x601ef3f72550681b:0x4e6162f748fcaacb!8m2!3d36.3923815!4d139.0709596!16s%2Fg%2F11fn4z617l?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D",
   "access": "上毛電鉄中央前橋駅より徒歩7分, JR前橋駅より徒歩17分",
   "sns": {
     "twitter": "https://x.com/SnBZt6eRCdz7lQw",
@@ -1618,7 +1618,7 @@
   "address": "〒260-0013 千葉県千葉市中央区中央１丁目７−８",
   "lat": 35.61065962695909,
   "lng": 140.12352849815048,
-  "map_url":"",
+  "map_url":"https://www.google.com/maps/place/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E+%E5%8D%83%E8%91%89%E5%BA%97/@35.6104939,140.1236036,17z/data=!3m2!4b1!5s0x602284ca4fa965f9:0x14014cf40602d921!4m6!3m5!1s0x602285b87119cbb1:0x28ffaceee4b67b85!8m2!3d35.6104939!4d140.1236036!16s%2Fg%2F11j394byqx?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D",
   "access": "千葉都市モノレール1号線葭川公園駅より徒歩6分, JR千葉駅より徒歩14分",
   "sns": {
     "twitter": "https://x.com/jiro_chiba",
@@ -1660,7 +1660,7 @@
   "address": "〒330-0805 埼玉県さいたま市大宮区寿能町１丁目２４",
   "lat": 35.92271442474328,
   "lng": 139.63195735582178,
-  "map_url":"",
+  "map_url":"https://www.google.com/maps/place/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E+%E5%A4%A7%E5%AE%AE%E5%85%AC%E5%9C%92%E9%A7%85%E5%89%8D%E5%BA%97/@35.9225841,139.632011,17z/data=!3m1!4b1!4m6!3m5!1s0x6018c19a7f0551d1:0x90e7bf2e946e972a!8m2!3d35.9225841!4d139.632011!16s%2Fg%2F11j5sqyg56?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D",
   "access": "東武アーバンパークライン大宮公園駅より徒歩2分",
   "sns": {
     "twitter": "https://x.com/omiyapark26",
@@ -1702,7 +1702,7 @@
   "address": "〒312-0063 茨城県ひたちなか市田彦１６４８−４",
   "lat": 36.409394398089034,
   "lng": 140.51536997301386,
-  "map_url":"",
+  "map_url":"https://www.google.com/maps/place/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E+%E3%81%B2%E3%81%9F%E3%81%A1%E3%81%AA%E3%81%8B%E5%BA%97/@36.4091699,140.5153056,17z/data=!3m1!4b1!4m6!3m5!1s0x60222fb24932933d:0x901c1160a2e890d7!8m2!3d36.4091699!4d140.5153056!16s%2Fg%2F11sgz4nh7f?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D",
   "access": "JR勝田駅より徒歩30分, 常磐自動車道那珂ICより車で12分",
   "sns": {
     "twitter": "https://x.com/26_hitachinaka",
@@ -1744,7 +1744,7 @@
   "address": "〒187-0045 東京都小平市学園西町２丁目１３−４",
   "lat": 35.72255351537088,
   "lng": 139.47922395582174,
-  "map_url":"",
+  "map_url":"https://www.google.com/maps/place/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E+%E4%B8%80%E6%A9%8B%E5%AD%A6%E5%9C%92%E5%BA%97/@35.7223706,139.4792776,17z/data=!4m6!3m5!1s0x6018e7e1b2a7b2b7:0xcfb72f2ab38f2c2f!8m2!3d35.7223706!4d139.4792776!16s%2Fg%2F11s460412m?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D",
   "access": "西武多摩湖線一橋学園駅より徒歩1分",
   "sns": {
     "twitter": "https://x.com/1284jiro",
@@ -1786,7 +1786,7 @@
   "address": "〒214-0038 神奈川県川崎市多摩区生田８丁目１−１５ スワンハイツ",
   "lat": 35.61574103574414,
   "lng": 139.54541061349303,
-  "map_url":"",
+  "map_url":"https://www.google.com/maps/place/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E+%E7%94%9F%E7%94%B0%E9%A7%85%E5%89%8D%E5%BA%97/@35.6154881,139.5454428,17z/data=!3m1!4b1!4m6!3m5!1s0x6018f16e5b5865ff:0xc5a9a8fe9b6916e8!8m2!3d35.6154881!4d139.5454428!16s%2Fg%2F11kplfsl1f?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D",
   "access": "小田急小田原線生田駅より徒歩4分",
   "sns": {
     "twitter": "https://x.com/ikuta_jiro",
@@ -1827,7 +1827,7 @@
   "address": "〒818-0083 福岡県筑紫野市針摺中央２丁目１７−８",
   "lat": 33.48457381278413,
   "lng": 130.5335262865069,
-  "map_url":"",
+  "map_url":"https://www.google.com/maps/place/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E4%BA%8C%E9%83%8E+%E6%9C%9D%E5%80%89%E8%A1%97%E9%81%93%E9%A7%85%E5%89%8D%E5%BA%97/@33.4843859,130.5334941,17z/data=!3m2!4b1!5s0x3541995e04e86f71:0xc6c7a9bf191f8f12!4m6!3m5!1s0x35419900074a1775:0xcc7e0652e2edaec9!8m2!3d33.4843859!4d130.5334941!16s%2Fg%2F11y8r4npyt?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D",
   "access": "天神大牟田線朝倉街道駅より徒歩4分, JR天拝山駅より徒歩8分",
   "sns": {
     "twitter": "https://x.com/r26akgd",
