@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { openDB } from "idb";
 import stores from "../data/stores.json";
+import { useNavigate } from "react-router-dom";
 
 export default function VisitDiary() {
+  const navigate = useNavigate();
   const [records, setRecords] = useState([]);
   const [filteredRecords, setFilteredRecords] = useState([]);
   const [showModal, setShowModal] = useState(false);
@@ -148,37 +150,28 @@ export default function VisitDiary() {
   return (
     <div className="diary-container">
       {/* ヘッダー部分 */}
-      <header className="diary-header">
+      {/* ✅ ハンバーガーメニュー */}
+      <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+        ☰
+      </div>
 
+      {menuOpen && (
+        <div className="menu">
+          <button onClick={() => { setMenuOpen(false); navigate("/"); }}>🏠 ホーム</button>
+          <button onClick={() => { setMenuOpen(false); navigate("/Stamp"); }}>🏅 スタンプラリー</button>
+          <button onClick={() => { setMenuOpen(false); navigate("/diary"); }}>📝 二郎ログ</button>
+          <button onClick={() => { setMenuOpen(false); navigate("/Contact"); }}>📩 お問い合わせ</button>
+        </div>
+      )}
+
+      {/* ロゴヘッダー */}
+      <div className="logo-header diary-logo-header">
         <img
           src="/images/header/jiro_diary_title.png"
           alt="二郎ログ"
-          className="diary-logo"
+          className="logo diary-logo"
         />
-
-        {/* ハンバーガーアイコン */}
-        <div
-          className={`hamburger ${menuOpen ? "open" : ""}`}
-          onClick={(e) => {
-            e.stopPropagation();
-            setMenuOpen((prev) => !prev);
-          }}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-
-        {/* メニュー展開 */}
-        {menuOpen && (
-          <div className="menu" ref={menuRef}>
-            <button onClick={() => { setMenuOpen(false); navigate("/"); }}>🏠 ホーム</button>
-            <button onClick={() => { setMenuOpen(false); navigate("/Stamp"); }}>🏅 スタンプラリー</button>
-            <button onClick={() => { setMenuOpen(false); navigate("/diary"); }}>📝 二郎ログ</button>
-            <button onClick={() => { setMenuOpen(false); navigate("/Contact"); }}>📩 お問い合わせ</button>
-          </div>
-        )}
-      </header>
+      </div>
 
       {/* 絞り込み＋ソートバー */}
       <div className="diary-filter-bar">
@@ -236,7 +229,7 @@ export default function VisitDiary() {
         <button onClick={resetFilters}>リセット</button>
       </div>
 
-      {/* 🐷 記録ボタン */}
+      {/* 記録ボタン */}
       <div>
         <img
           src="/images/icon/log.png"
@@ -246,7 +239,7 @@ export default function VisitDiary() {
         />
       </div>
 
-      {/* 📝 モーダル（新規登録） */}
+      {/* モーダル（新規登録） */}
       {showModal && (
         <div className="modal-overlay">
           <div className="modal-content">
@@ -342,7 +335,7 @@ export default function VisitDiary() {
         </div>
       )}
 
-      {/* 📸 詳細モーダル（カルーセルつき） */}
+      {/* 詳細モーダル（カルーセルつき） */}
       {selectedRecord && (
         <div className="modal-overlay" onClick={closeDetailModal}>
           <div
@@ -387,7 +380,7 @@ export default function VisitDiary() {
         </div>
       )}
 
-      {/* 🗂 一覧 */}
+      {/* 一覧 */}
       <div className="diary-list">
         {filteredRecords.length === 0 && (
           <p style={{ textAlign: "center", width: "100%", color: "#888" }}>

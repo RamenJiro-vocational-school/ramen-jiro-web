@@ -852,19 +852,20 @@ h1 {
   background-color: #ffd700;
 }
 
-/* VisitDiary 用タイトルロゴ */
-.diary-logo {
-  height: 40px;      /* トップページより小さめ */
-  width: auto;
-  object-fit: contain;
-  margin-left: 8px;
-}
-
-/* フェードイン無効（トップページとは別に） */
-.logo-header,
-.diary-logo {
+/* 二郎ログ専用ロゴ調整 */
+.diary-logo-header {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
   animation: none !important;
 }
+
+.diary-logo {
+  max-width: 420px;
+  width: 100%;
+  height: auto;
+}
+
 
 
 /* スマホ対応 */
