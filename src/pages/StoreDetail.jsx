@@ -43,59 +43,60 @@ export default function StoreDetail() {
 
   const [isFavorite, setIsFavorite] = useState(false)
 
-  // ページ内地図に使う要素
   useEffect(() => {
-    if (!store?.map_url) return
+    const favs = JSON.parse(localStorage.getItem("favorites") || "[]");
+    setIsFavorite(favs.includes(String(id)));
+  }, [id]);
+
+  useEffect(() => {
+    localStorage.setItem(`visitCount_${id}`, visitCount);
+  }, [visitCount, id]);
+
+  const status = getStatus(store);
+
+  // ---------- 🌏 Leaflet地図 ----------
+  useEffect(() => {
+    if (!store?.map_url) return;
 
     // URL中の "@35.64806,139.74163" を抽出
-    const match = store.map_url.match(/@(-?\d+\.\d+),(-?\d+\.\d+)/)
-    if (!match) return
+    const match = store.map_url.match(/@(-?\d+\.\d+),(-?\d+\.\d+)/);
+    if (!match) return;
 
-    const lat = parseFloat(match[1])
-    const lng = parseFloat(match[2])
+    const lat = parseFloat(match[1]);
+    const lng = parseFloat(match[2]);
 
-    // Google Map生成
-    const map = new window.google.maps.Map(document.getElementById("map"), {
-      center: { lat, lng },
-      zoom: 16,
-    })
-
-    // カスタムピン
-    const customIcon = {
-      url: "/images/icon/garlic.png",
-      scaledSize: new window.google.maps.Size(48, 48),
-      anchor: new window.google.maps.Point(24, 48),
+    // すでに地図がある場合はリセット
+    const existingMap = document.getElementById("leaflet-map");
+    if (existingMap._leaflet_id) {
+      existingMap._leaflet_id = null;
     }
 
-    const marker = new window.google.maps.Marker({
-      position: { lat, lng },
-      map,
-      title: store.name,
-      icon: customIcon,
-    })
+    const map = L.map("leaflet-map").setView([lat, lng], 16);
 
-    // 吹き出し
-    const info = new window.google.maps.InfoWindow({
-      content: `<div style="font-weight:bold;">${store.name}</div><div>${store.address}</div>`,
-    })
-    marker.addListener("click", () => info.open(map, marker))
-  }, [store])
+    // OpenStreetMap タイル
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: '&copy; OpenStreetMap contributors',
+    }).addTo(map);
 
-  // localStorage復元
-  useEffect(() => {
-    const favs = JSON.parse(localStorage.getItem("favorites") || "[]")
-    setIsFavorite(favs.includes(String(id)))
-  }, [id])
+    // カスタムアイコン（ニンニク）
+    const garlicIcon = L.icon({
+      iconUrl: "/images/icon/garlic.png", // パスはpublic配下
+      iconSize: [48, 48],
+      iconAnchor: [24, 48],
+    });
 
-  useEffect(() => {
-    localStorage.setItem(`visitCount_${id}`, visitCount)
-  }, [visitCount, id])
+    // マーカー
+    const marker = L.marker([lat, lng], { icon: garlicIcon }).addTo(map);
+    marker.bindPopup(`<b>${store.name}</b><br>${store.address}`);
+  }, [store]);
 
   if (!store) {
-    return <div className="store-detail"><h1>店舗が見つかりませんでした</h1></div>
+    return (
+      <div className="store-detail">
+        <h1>店舗が見つかりませんでした</h1>
+      </div>
+    );
   }
-
-  const status = getStatus(store)
 
   return (
     <div className="store-detail">
@@ -136,11 +137,14 @@ export default function StoreDetail() {
         <h2>住所・アクセス</h2>
         <p>{store.address}</p>
         <p>{store.access}</p>
-
-        {/* アイコンピン付きGoogle Map */}
         <div
-          id="map"
-          style={{ width: "100%", height: "250px", borderRadius: "8px" }}
+          id="leaflet-map"
+          style={{
+            width: "100%",
+            height: "250px",
+            borderRadius: "8px",
+            marginTop: "10px",
+          }}
         ></div>
       </div>
 
