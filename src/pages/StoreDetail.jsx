@@ -16,56 +16,77 @@ const dayMap = {
 function getStatus(store) {
   const now = new Date()
   const today = now.getDay() === 0 ? 7 : now.getDay() // 日曜=7
-  const timeStr = now.toTimeString().slice(0, 5) // "HH:MM"
+  const timeStr = now.toTimeString().slice(0, 5)
 
   const hours = store.business_hours?.[today]
 
-  if (!hours) {
-    return { cls: "closed", text: "定休日" }
-  }
+  if (!hours) return { cls: "closed", text: "定休日" }
 
-  // 複数時間帯対応
   const ranges = hours.split(",").map(r => r.trim())
   const inRange = ranges.some(range => {
     const [start, end] = range.split("-")
     return timeStr >= start && timeStr <= end
   })
 
-  if (inRange) {
-    return { cls: "open", text: "営業中" }
-  } else {
-    return { cls: "prep", text: "準備中" }
-  }
+  return inRange ? { cls: "open", text: "営業中" } : { cls: "prep", text: "準備中" }
 }
 
-// export default function StoreDetail() {
-//   const { id } = useParams()
-//   const store = stores.find(s => s.id === id)
-//   const [visitCount, setVisitCount] = useState(0)
-//   const [isFavorite, setIsFavorite] = useState(false) //お気に入り判定
 export default function StoreDetail() {
   const { id } = useParams()
   const navigate = useNavigate()
   const store = stores.find(s => String(s.id) === String(id))
 
-  console.log("StoreDetail表示確認:", { id, store });
-
-  // localStorageから即時復元
   const [visitCount, setVisitCount] = useState(() => {
     const saved = localStorage.getItem(`visitCount_${id}`)
     return saved !== null ? parseInt(saved, 10) : 0
   })
 
   const [isFavorite, setIsFavorite] = useState(false)
-  const [showTopBtn, setShowTopBtn] = useState(false)
 
-  // ページ表示時にお気に入り状態を復元
+  // ページ内地図に使う要素
+  useEffect(() => {
+    if (!store?.map_url) return
+
+    // URL中の "@35.64806,139.74163" を抽出
+    const match = store.map_url.match(/@(-?\d+\.\d+),(-?\d+\.\d+)/)
+    if (!match) return
+
+    const lat = parseFloat(match[1])
+    const lng = parseFloat(match[2])
+
+    // Google Map生成
+    const map = new window.google.maps.Map(document.getElementById("map"), {
+      center: { lat, lng },
+      zoom: 16,
+    })
+
+    // カスタムピン
+    const customIcon = {
+      url: "/images/icon/garlic.png",
+      scaledSize: new window.google.maps.Size(48, 48),
+      anchor: new window.google.maps.Point(24, 48),
+    }
+
+    const marker = new window.google.maps.Marker({
+      position: { lat, lng },
+      map,
+      title: store.name,
+      icon: customIcon,
+    })
+
+    // 吹き出し
+    const info = new window.google.maps.InfoWindow({
+      content: `<div style="font-weight:bold;">${store.name}</div><div>${store.address}</div>`,
+    })
+    marker.addListener("click", () => info.open(map, marker))
+  }, [store])
+
+  // localStorage復元
   useEffect(() => {
     const favs = JSON.parse(localStorage.getItem("favorites") || "[]")
     setIsFavorite(favs.includes(String(id)))
   }, [id])
 
-  // visitCount が変わるたび保存
   useEffect(() => {
     localStorage.setItem(`visitCount_${id}`, visitCount)
   }, [visitCount, id])
@@ -73,7 +94,6 @@ export default function StoreDetail() {
   if (!store) {
     return <div className="store-detail"><h1>店舗が見つかりませんでした</h1></div>
   }
-
 
   const status = getStatus(store)
 
@@ -88,20 +108,15 @@ export default function StoreDetail() {
       <div className="store-header">
         <h1>{store.name}</h1>
         <span className={`status-badge ${status.cls}`}>{status.text}</span>
-        {/* お気に入りボタン */}
+
         <button
           className={`favorite-btn ${isFavorite ? "on" : ""}`}
           onClick={() => {
             const favs = JSON.parse(localStorage.getItem("favorites") || "[]")
-            let updatedFavs
-            if (isFavorite) {
-              // 解除
-              updatedFavs = favs.filter(f => f !== store.id)
-            } else {
-              // 登録
-              updatedFavs = [...favs, store.id]
-            }
-            localStorage.setItem("favorites", JSON.stringify(updatedFavs))
+            const updated = isFavorite
+              ? favs.filter(f => f !== store.id)
+              : [...favs, store.id]
+            localStorage.setItem("favorites", JSON.stringify(updated))
             setIsFavorite(!isFavorite)
           }}
         >
@@ -109,27 +124,24 @@ export default function StoreDetail() {
         </button>
       </div>
 
-      {/* 訪問回数ボタン */}
+      {/* 訪問回数 */}
       <div className="visit-counter">
         <button onClick={() => setVisitCount(visitCount - 1)} disabled={visitCount <= 0}>⊖</button>
         <span>{visitCount} 回</span>
         <button onClick={() => setVisitCount(visitCount + 1)}>⊕</button>
       </div>
 
-      {/* 住所 + アクセス */}
+      {/* 住所・アクセス・地図 */}
       <div className="detail-card">
         <h2>住所・アクセス</h2>
         <p>{store.address}</p>
         <p>{store.access}</p>
-        <iframe
-          src={`https://www.google.com/maps?q=${store.lat},${store.lng}&z=16&output=embed`}
-          width="100%"
-          height="250"
-          style={{ border: 0 }}
-          allowFullScreen=""
-          loading="lazy"
-          title="Google Map"
-        ></iframe>
+
+        {/* アイコンピン付きGoogle Map */}
+        <div
+          id="map"
+          style={{ width: "100%", height: "250px", borderRadius: "8px" }}
+        ></div>
       </div>
 
       {/* 営業時間 */}
@@ -181,6 +193,7 @@ export default function StoreDetail() {
           </tbody>
         </table>
       </div>
+
       <img
         src="/images/icon/top.png"
         alt="トップへ"
