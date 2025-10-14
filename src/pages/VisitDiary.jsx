@@ -8,7 +8,8 @@ export default function VisitDiary() {
   const [showModal, setShowModal] = useState(false);
   const [selectedRecord, setSelectedRecord] = useState(null);
   const [filters, setFilters] = useState({ year: "", month: "", store: "" });
-  const [sortOption, setSortOption] = useState("newest"); // 🆕 ソート設定
+  const [sortOption, setSortOption] = useState("newest"); // ソート設定
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const [newRecord, setNewRecord] = useState({
     date: "",
@@ -146,7 +147,40 @@ export default function VisitDiary() {
 
   return (
     <div className="diary-container">
-      {/* 🧭 絞り込み＋ソートバー */}
+      {/* ヘッダー部分 */}
+      <header className="diary-header">
+
+        <img
+          src="/images/header/jiro_diary_title.png"
+          alt="二郎ログ"
+          className="diary-logo"
+        />
+
+        {/* ハンバーガーアイコン */}
+        <div
+          className={`hamburger ${menuOpen ? "open" : ""}`}
+          onClick={(e) => {
+            e.stopPropagation();
+            setMenuOpen((prev) => !prev);
+          }}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        {/* メニュー展開 */}
+        {menuOpen && (
+          <div className="menu" ref={menuRef}>
+            <button onClick={() => { setMenuOpen(false); navigate("/"); }}>🏠 ホーム</button>
+            <button onClick={() => { setMenuOpen(false); navigate("/Stamp"); }}>🏅 スタンプラリー</button>
+            <button onClick={() => { setMenuOpen(false); navigate("/diary"); }}>📝 二郎ログ</button>
+            <button onClick={() => { setMenuOpen(false); navigate("/Contact"); }}>📩 お問い合わせ</button>
+          </div>
+        )}
+      </header>
+
+      {/* 絞り込み＋ソートバー */}
       <div className="diary-filter-bar">
         {/* 年 */}
         <select
