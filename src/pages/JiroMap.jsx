@@ -4,7 +4,6 @@ import L from "leaflet";
 import { useEffect, useState } from "react";
 import { OpenStreetMapProvider } from "leaflet-geosearch";
 import stores from "../data/stores.json";
-import garlicIcon from "../images/icon/garlic.png";
 
 export default function JiroMap() {
   const [locations, setLocations] = useState([]);
