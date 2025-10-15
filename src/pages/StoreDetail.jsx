@@ -1,6 +1,9 @@
-import { useParams, useNavigate } from "react-router-dom"
-import { useState, useEffect } from "react"
-import stores from "../data/stores.json"
+// StoreDetail.jsx
+import { useParams, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
+import stores from "../data/stores.json";
 
 const dayMap = {
   1: "月曜",
@@ -9,39 +12,35 @@ const dayMap = {
   4: "木曜",
   5: "金曜",
   6: "土曜",
-  7: "日曜"
-}
+  7: "日曜",
+};
 
 // 営業ステータス判定
 function getStatus(store) {
-  const now = new Date()
-  const today = now.getDay() === 0 ? 7 : now.getDay() // 日曜=7
-  const timeStr = now.toTimeString().slice(0, 5)
+  const now = new Date();
+  const today = now.getDay() === 0 ? 7 : now.getDay(); // 日曜=7
+  const timeStr = now.toTimeString().slice(0, 5);
+  const hours = store.business_hours?.[today];
+  if (!hours) return { cls: "closed", text: "定休日" };
 
-  const hours = store.business_hours?.[today]
-
-  if (!hours) return { cls: "closed", text: "定休日" }
-
-  const ranges = hours.split(",").map(r => r.trim())
-  const inRange = ranges.some(range => {
-    const [start, end] = range.split("-")
-    return timeStr >= start && timeStr <= end
-  })
-
-  return inRange ? { cls: "open", text: "営業中" } : { cls: "prep", text: "準備中" }
+  const ranges = hours.split(",").map((r) => r.trim());
+  const inRange = ranges.some((range) => {
+    const [start, end] = range.split("-");
+    return timeStr >= start && timeStr <= end;
+  });
+  return inRange ? { cls: "open", text: "営業中" } : { cls: "prep", text: "準備中" };
 }
 
 export default function StoreDetail() {
-  const { id } = useParams()
-  const navigate = useNavigate()
-  const store = stores.find(s => String(s.id) === String(id))
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const store = stores.find((s) => String(s.id) === String(id));
 
   const [visitCount, setVisitCount] = useState(() => {
-    const saved = localStorage.getItem(`visitCount_${id}`)
-    return saved !== null ? parseInt(saved, 10) : 0
-  })
-
-  const [isFavorite, setIsFavorite] = useState(false)
+    const saved = localStorage.getItem(`visitCount_${id}`);
+    return saved !== null ? parseInt(saved, 10) : 0;
+  });
+  const [isFavorite, setIsFavorite] = useState(false);
 
   useEffect(() => {
     const favs = JSON.parse(localStorage.getItem("favorites") || "[]");
@@ -51,6 +50,14 @@ export default function StoreDetail() {
   useEffect(() => {
     localStorage.setItem(`visitCount_${id}`, visitCount);
   }, [visitCount, id]);
+
+  if (!store) {
+    return (
+      <div className="store-detail">
+        <h1>店舗が見つかりませんでした</h1>
+      </div>
+    );
+  }
 
   const status = getStatus(store);
 
@@ -65,38 +72,34 @@ export default function StoreDetail() {
     const lat = parseFloat(match[1]);
     const lng = parseFloat(match[2]);
 
-    // すでに地図がある場合はリセット
-    const existingMap = document.getElementById("leaflet-map");
-    if (existingMap._leaflet_id) {
-      existingMap._leaflet_id = null;
+    const el = document.getElementById("leaflet-map");
+    if (!el) return;
+
+    // 既存インスタンス対策
+    if (el._leaflet_id) {
+      el._leaflet_id = null;
+      el.innerHTML = "";
     }
 
-    const map = L.map("leaflet-map").setView([lat, lng], 16);
+    const map = L.map(el).setView([lat, lng], 16);
 
-    // OpenStreetMap タイル
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      attribution: '&copy; OpenStreetMap contributors',
+      attribution: "&copy; OpenStreetMap contributors",
     }).addTo(map);
 
-    // カスタムアイコン（ニンニク）
     const garlicIcon = L.icon({
-      iconUrl: "/images/icon/garlic.png", // パスはpublic配下
+      iconUrl: "/images/icon/garlic.png", // public配下
       iconSize: [48, 48],
       iconAnchor: [24, 48],
     });
 
-    // マーカー
     const marker = L.marker([lat, lng], { icon: garlicIcon }).addTo(map);
     marker.bindPopup(`<b>${store.name}</b><br>${store.address}`);
-  }, [store]);
 
-  if (!store) {
-    return (
-      <div className="store-detail">
-        <h1>店舗が見つかりませんでした</h1>
-      </div>
-    );
-  }
+    return () => {
+      map.remove(); // クリーンアップ
+    };
+  }, [store]);
 
   return (
     <div className="store-detail">
@@ -113,12 +116,10 @@ export default function StoreDetail() {
         <button
           className={`favorite-btn ${isFavorite ? "on" : ""}`}
           onClick={() => {
-            const favs = JSON.parse(localStorage.getItem("favorites") || "[]")
-            const updated = isFavorite
-              ? favs.filter(f => f !== store.id)
-              : [...favs, store.id]
-            localStorage.setItem("favorites", JSON.stringify(updated))
-            setIsFavorite(!isFavorite)
+            const favs = JSON.parse(localStorage.getItem("favorites") || "[]");
+            const updated = isFavorite ? favs.filter((f) => f !== store.id) : [...favs, store.id];
+            localStorage.setItem("favorites", JSON.stringify(updated));
+            setIsFavorite(!isFavorite);
           }}
         >
           {isFavorite ? "★ お気に入り済み" : "☆ お気に入り"}
@@ -127,7 +128,9 @@ export default function StoreDetail() {
 
       {/* 訪問回数 */}
       <div className="visit-counter">
-        <button onClick={() => setVisitCount(visitCount - 1)} disabled={visitCount <= 0}>⊖</button>
+        <button onClick={() => setVisitCount(visitCount - 1)} disabled={visitCount <= 0}>
+          ⊖
+        </button>
         <span>{visitCount} 回</span>
         <button onClick={() => setVisitCount(visitCount + 1)}>⊕</button>
       </div>
@@ -139,13 +142,8 @@ export default function StoreDetail() {
         <p>{store.access}</p>
         <div
           id="leaflet-map"
-          style={{
-            width: "100%",
-            height: "250px",
-            borderRadius: "8px",
-            marginTop: "10px",
-          }}
-        ></div>
+          style={{ width: "100%", height: "250px", borderRadius: "8px", marginTop: "10px" }}
+        />
       </div>
 
       {/* 営業時間 */}
@@ -168,9 +166,27 @@ export default function StoreDetail() {
       <div className="detail-card">
         <h2>SNS</h2>
         <ul>
-          {store.sns.twitter && <li><a href={store.sns.twitter} target="_blank" rel="noreferrer">Twitter</a></li>}
-          {store.sns.instagram && <li><a href={store.sns.instagram} target="_blank" rel="noreferrer">Instagram</a></li>}
-          {store.sns.official && <li><a href={store.sns.official} target="_blank" rel="noreferrer">公式サイト</a></li>}
+          {store.sns.twitter && (
+            <li>
+              <a href={store.sns.twitter} target="_blank" rel="noreferrer">
+                Twitter
+              </a>
+            </li>
+          )}
+          {store.sns.instagram && (
+            <li>
+              <a href={store.sns.instagram} target="_blank" rel="noreferrer">
+                Instagram
+              </a>
+            </li>
+          )}
+          {store.sns.official && (
+            <li>
+              <a href={store.sns.official} target="_blank" rel="noreferrer">
+                公式サイト
+              </a>
+            </li>
+          )}
         </ul>
       </div>
 
@@ -179,7 +195,9 @@ export default function StoreDetail() {
         <h2>メニュー</h2>
         <ul>
           {store.menu.map((item, i) => (
-            <li key={i}>{item.name} - {item.price}円</li>
+            <li key={i}>
+              {item.name} - {item.price}円
+            </li>
           ))}
         </ul>
       </div>
@@ -189,11 +207,28 @@ export default function StoreDetail() {
         <h2>その他</h2>
         <table className="info-table">
           <tbody>
-            <tr><td>調味料</td><td>{store.seasonings.join("、")}</td></tr>
-            <tr><td>レンゲ</td><td>{store.hasRenge ? "あり" : "なし"}</td></tr>
-            <tr><td>茹で調整</td><td>{store.boilAdjustable ? "可能" : "不可"}</td></tr>
-            <tr><td>駐車情報</td><td>{store.parkingInfo}</td></tr>
-            {store.memo && <tr><td>メモ</td><td>{store.memo}</td></tr>}
+            <tr>
+              <td>調味料</td>
+              <td>{store.seasonings.join("、")}</td>
+            </tr>
+            <tr>
+              <td>レンゲ</td>
+              <td>{store.hasRenge ? "あり" : "なし"}</td>
+            </tr>
+            <tr>
+              <td>茹で調整</td>
+              <td>{store.boilAdjustable ? "可能" : "不可"}</td>
+            </tr>
+            <tr>
+              <td>駐車情報</td>
+              <td>{store.parkingInfo}</td>
+            </tr>
+            {store.memo && (
+              <tr>
+                <td>メモ</td>
+                <td>{store.memo}</td>
+              </tr>
+            )}
           </tbody>
         </table>
       </div>
@@ -205,5 +240,5 @@ export default function StoreDetail() {
         onClick={() => navigate("/")}
       />
     </div>
-  )
+  );
 }
