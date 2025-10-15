@@ -3,11 +3,13 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { useEffect, useState } from "react";
 import { OpenStreetMapProvider } from "leaflet-geosearch";
+import { useNavigate } from "react-router-dom";
 import stores from "../data/stores.json";
 
 export default function JiroMap() {
   const [locations, setLocations] = useState([]);
   const provider = new OpenStreetMapProvider();
+  const navigate = useNavigate();
 
   // 初回ロード時に住所から緯度経度を取得
   useEffect(() => {
@@ -48,30 +50,45 @@ export default function JiroMap() {
   // ニンニクピン設定
   const icon = L.icon({
     iconUrl: "/images/icon/garlic.png",
-    iconSize: [44, 44],
-    iconAnchor: [22, 44],
-    popupAnchor: [0, -40],
+    iconSize: [40, 40],
+    iconAnchor: [20, 40],
+    popupAnchor: [0, -35],
+    className: "garlic-pin",
   });
 
   return (
-    <div style={{ height: "600px", width: "100%", borderRadius: "10px" }}>
+    <div className="jiro-map-container">
+      {/* 🔥 ヘッダー画像部分 */}
+      <div className="jiro-map-header">
+        <img
+          src="/images/header/jiro_map_title.png"
+          alt="全国ラーメン二郎マップ"
+          className="jiro-map-title-img"
+        />
+      </div>
+
+      {/* 地図部分 */}
       <MapContainer
         center={[35.68, 139.76]} // 東京中心
         zoom={6}
-        style={{ height: "100%", width: "100%" }}
+        className="jiro-map"
       >
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; OpenStreetMap contributors'
         />
+
         {locations.map((store, idx) => (
           <Marker key={idx} position={[store.lat, store.lng]} icon={icon}>
             <Popup>
               <b>{store.name}</b>
               <br />
-              <a href={store.url} target="_blank" rel="noreferrer">
-                店舗ページへ →
-              </a>
+              <button
+                className="popup-btn"
+                onClick={() => navigate(`/store/${store.id}`)}
+              >
+                店舗詳細ページへ →
+              </button>
             </Popup>
           </Marker>
         ))}

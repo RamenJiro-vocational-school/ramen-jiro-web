@@ -967,3 +967,93 @@ h1 {
   height: auto;
 }
 }
+
+/* ================================
+  10. 全国二郎マップ（JiroMap.jsx）
+================================ */
+/* ---------- 全国二郎マップ ヘッダー整列調整 ---------- */
+.jiro-map-header {
+ display: flex;
+ justify-content: center; 
+ align-items: center;
+ margin-top: 0;
+ margin-bottom: 0;
+ text-align: center;
+ width: 100%;
+}
+
+/* 画像の完全中央固定 */
+.jiro-map-title-img {
+ width: clamp(320px, 60%, 600px); 
+ height: auto;
+ filter: drop-shadow(2px 3px 6px rgba(0, 0, 0, 0.35));
+ animation: fadeIn 1.2s ease-out;
+ margin: 0 auto;
+ display: block;
+ position: relative; 
+ left: 0; 
+ transform: none;
+}
+
+/* ヘッダーと地図の間隔を自然に */
+.jiro-map-container {
+ margin-top: 0;
+ padding-top: 10px;
+ text-align: center;
+}
+
+/* フェードイン演出 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 地図コンテナ */
+.jiro-map-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+.jiro-map {
+  height: 600px;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  border: 3px solid #ffeb3b;
+}
+
+/* ピン */
+.garlic-pin {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+  transition: transform 0.2s ease-in-out;
+}
+.garlic-pin:hover {
+  transform: scale(1.15);
+}
+
+/* ポップアップボタン */
+.popup-btn {
+  margin-top: 6px;
+  background-color: #ffe600;
+  border: none;
+  color: #000;
+  padding: 4px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: background-color 0.2s, transform 0.1s;
+}
+.popup-btn:hover {
+  background-color: #ffcd00;
+  transform: scale(1.05);
+}
