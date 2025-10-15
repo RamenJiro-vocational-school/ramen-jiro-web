@@ -48,7 +48,7 @@ export default function JiroMap() {
 
   // ニンニクピン設定
   const icon = L.icon({
-    iconUrl: garlicIcon,
+    iconUrl: "/images/icon/garlic.png",
     iconSize: [44, 44],
     iconAnchor: [22, 44],
     popupAnchor: [0, -40],

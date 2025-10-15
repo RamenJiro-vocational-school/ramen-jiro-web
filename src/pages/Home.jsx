@@ -88,7 +88,7 @@ return (
           <button onClick={() => { setMenuOpen(false); navigate("/"); }}>🏠 ホーム</button>
           <button onClick={() => { setMenuOpen(false); navigate("/Stamp"); }}>🏅 スタンプラリー</button>
           <button onClick={() => { setMenuOpen(false); navigate("/diary"); }}>📝 二郎ログ</button>
-          <button onClick={() => { setMenuOpen(false); navigate("/Contact"); }}>📩 お問い合わせ</button>
+          <button onClick={() => { setMenuOpen(false); navigate("/map"); }}>🗾 二郎全国マップ</button>
         </div>
       )}
 
