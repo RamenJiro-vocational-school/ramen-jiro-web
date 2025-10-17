@@ -1,7 +1,7 @@
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { OpenStreetMapProvider } from "leaflet-geosearch";
 import { useNavigate } from "react-router-dom";
 import stores from "../data/stores.json";
@@ -10,6 +10,21 @@ export default function JiroMap() {
   const [locations, setLocations] = useState([]);
   const provider = new OpenStreetMapProvider();
   const navigate = useNavigate();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef(null);
+
+  // 外クリックで閉じる処理
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setMenuOpen(false);
+      }
+    };
+    if (menuOpen) document.addEventListener('mousedown', handleClickOutside);
+    else document.removeEventListener('mousedown', handleClickOutside);
+
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [menuOpen]);
 
   // 初回ロード時に住所から緯度経度を取得
   useEffect(() => {
@@ -58,7 +73,21 @@ export default function JiroMap() {
 
   return (
     <div className="jiro-map-container">
-      {/* 🔥 ヘッダー画像部分 */}
+      {/* ✅ ハンバーガーメニュー */}
+      <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+        ☰
+      </div>
+
+      {menuOpen && (
+        <div className="menu">
+          <button onClick={() => { setMenuOpen(false); navigate("/"); }}>🏠 ホーム</button>
+          <button onClick={() => { setMenuOpen(false); navigate("/Stamp"); }}>🏅 スタンプラリー</button>
+          <button onClick={() => { setMenuOpen(false); navigate("/diary"); }}>📝 二郎ログ</button>
+          <button onClick={() => { setMenuOpen(false); navigate("/map"); }}>🗾 二郎全国マップ</button>
+        </div>
+      )}
+
+      {/* ヘッダー画像部分 */}
       <div className="jiro-map-header">
         <img
           src="/images/header/jiro_map_title.png"

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { openDB } from "idb";
 import stores from "../data/stores.json";
 import { useNavigate } from "react-router-dom";
@@ -12,6 +12,7 @@ export default function VisitDiary() {
   const [filters, setFilters] = useState({ year: "", month: "", store: "" });
   const [sortOption, setSortOption] = useState("newest"); // ソート設定
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef(null);
 
   const [newRecord, setNewRecord] = useState({
     date: "",
@@ -21,6 +22,19 @@ export default function VisitDiary() {
     memo: "",
     photos: [],
   });
+
+  // 外クリックで閉じる処理
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setMenuOpen(false);
+      }
+    };
+    if (menuOpen) document.addEventListener('mousedown', handleClickOutside);
+    else document.removeEventListener('mousedown', handleClickOutside);
+
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [menuOpen]);
 
   // --- IndexedDB 初期化 ---
   useEffect(() => {

@@ -1,7 +1,7 @@
 import stores from '../data/stores.json'
 import logo from '../assets/title_01.png'
 import { useNavigate } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 
 
 // 現在時刻から営業中/休憩中/定休日を判定する関数
@@ -36,6 +36,20 @@ export default function Home() {
 
   // ハンバーガーアイコン開閉状態を管理
   const [menuOpen, setMenuOpen] = useState(false)
+  const menuRef = useRef(null);
+
+  // 外クリックで閉じる処理
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setMenuOpen(false);
+      }
+    };
+    if (menuOpen) document.addEventListener('mousedown', handleClickOutside);
+    else document.removeEventListener('mousedown', handleClickOutside);
+
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [menuOpen]);
 
   // --- localStorage からお気に入りを常に同期する ---
   useEffect(() => {

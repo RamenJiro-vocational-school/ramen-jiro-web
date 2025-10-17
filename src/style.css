@@ -69,6 +69,11 @@ h1 {
   cursor: pointer;
   z-index: 1000;
   color: #222;
+  transition: transform 0.2s ease;
+}
+
+.hamburger:hover {
+  transform: scale(1.1);
 }
 
 .menu {
