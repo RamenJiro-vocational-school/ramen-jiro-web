@@ -170,7 +170,7 @@ export default function VisitDiary() {
       </div>
 
       {menuOpen && (
-        <div className="menu">
+        <div className="menu" ref={menuRef}>
           <button onClick={() => { setMenuOpen(false); navigate("/"); }}>🏠 ホーム</button>
           <button onClick={() => { setMenuOpen(false); navigate("/Stamp"); }}>🏅 スタンプラリー</button>
           <button onClick={() => { setMenuOpen(false); navigate("/diary"); }}>📝 二郎ログ</button>
