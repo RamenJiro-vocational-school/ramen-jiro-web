@@ -104,21 +104,21 @@ h1 {
   background: #ffe6e6;
 }
 
-/* 時計アイコン */
+/* 時計アイコン（右下固定） */
 .clock-icon {
   position: fixed;
-  top: 16px;
-  left: 20px;
+  bottom: 20px;
+  right: 20px;
   z-index: 1000;
   cursor: pointer;
 }
 
 .clock-img {
-  width: 64px;
-  height: 64px;
+  width: 72px;
+  height: 72px;
   object-fit: contain;
-  filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.25));
-  transition: transform 0.2s ease;
+  filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.3));
+  transition: transform 0.25s ease;
 }
 
 .clock-img:hover {
@@ -128,11 +128,11 @@ h1 {
 /* ポップアップ */
 .clock-menu {
   position: fixed;
-  top: 70px;
-  left: 20px;
+  bottom: 90px; /* 時計アイコンより上に表示 */
+  right: 20px;
   background: #fff8dc;
   border: 2px solid #b71c1c;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
   border-radius: 8px;
   z-index: 999;
   padding: 10px 14px;
@@ -140,25 +140,27 @@ h1 {
   flex-direction: column;
   gap: 6px;
   animation: fadeIn 0.25s ease-out;
+  width: 210px;
 }
 
 .clock-menu label {
   font-weight: bold;
   color: #b71c1c;
+  font-size: 0.9rem;
 }
 
 .clock-menu input {
   border: 1.5px solid #b71c1c;
   border-radius: 5px;
   padding: 4px 6px;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 
 .clock-menu button {
   border: 2px solid #b71c1c;
   background: #ffe6e6;
   border-radius: 5px;
-  padding: 6px 8px;
+  padding: 5px 6px;
   font-weight: bold;
   color: #b71c1c;
   cursor: pointer;
@@ -169,12 +171,6 @@ h1 {
   background: #ffcccc;
 }
 
-.time-label {
-  text-align: center;
-  color: #333;
-  font-weight: bold;
-  margin-top: 8px;
-}
 
 
 /* ================================
