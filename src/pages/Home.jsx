@@ -32,6 +32,16 @@ export default function Home() {
   const menuRef = useRef(null);
   const clockRef = useRef(null);
 
+  // 注意ポップアップ制御
+  const [showNotice, setShowNotice] = useState(false)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowNotice(true)
+    }, 2000) // 2秒後に表示
+    return () => clearTimeout(timer)
+  }, [])
+
   // 外クリックで閉じる
   useEffect(() => {
     const handleClickOutside = (event) => {

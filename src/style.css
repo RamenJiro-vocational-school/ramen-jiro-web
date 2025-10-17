@@ -321,6 +321,76 @@ h1 {
   min-height: 1.2em;  /* 何も入ってない時でも高さを確保 */
 }
 
+/* 注意ポップアップ背景 */
+.notice-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  animation: fadeIn 0.3s ease;
+}
+
+/* モーダル本体 */
+.notice-modal {
+  background: #fffbe8;
+  border-radius: 14px;
+  padding: 24px;
+  width: 85%;
+  max-width: 420px;
+  color: #333;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  font-family: "UD デジタル 教科書体 NK", sans-serif;
+  animation: popUp 0.3s ease;
+}
+
+.notice-modal h2 {
+  text-align: center;
+  font-size: 1.3rem;
+  color: #b71c1c;
+  margin-bottom: 10px;
+}
+
+.notice-modal ul {
+  padding-left: 20px;
+  margin: 10px 0;
+}
+
+.notice-modal li {
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+
+.notice-modal button {
+  display: block;
+  margin: 14px auto 0;
+  padding: 6px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background: #b71c1c;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.notice-modal button:hover {
+  background: #d32f2f;
+}
+
+@keyframes popUp {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+
 /* ================================
    7. 店舗詳細ページ
 ================================ */
