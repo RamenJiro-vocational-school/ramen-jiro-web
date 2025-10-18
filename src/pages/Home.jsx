@@ -190,6 +190,24 @@ export default function Home() {
           );
         })}
       </div>
+      {/* 注意ポップアップ */}
+      {showNotice && (
+        <div className="notice-overlay">
+          <div className="notice-modal">
+            <h2>⚠️ ご注意ください ⚠️</h2>
+            <p>本アプリの営業時間情報はあくまで目安です。</p>
+            <ul>
+              <li>麺切れ等で早仕舞いになる場合があります</li>
+              <li>臨時の営業／休業もあり得ます</li>
+              <li>祝日は不定休な店舗も多いです</li>
+              <li>年末年始や大型連休は特にご注意を</li>
+              <li>手作業にて更新しておりますのでリアルタイムの情報ではございません</li>
+            </ul>
+            <p>必ず店舗のSNSや公式情報をご確認のうえご訪問ください。</p>
+            <button onClick={() => setShowNotice(false)}>OK</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
