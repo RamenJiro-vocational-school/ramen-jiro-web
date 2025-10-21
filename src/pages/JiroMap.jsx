@@ -81,7 +81,7 @@ export default function JiroMap() {
       {menuOpen && (
         <div className="menu" ref={menuRef}>
           <button onClick={() => { setMenuOpen(false); navigate("/"); }}>🏠 ホーム</button>
-          <button onClick={() => { setMenuOpen(false); navigate("/Stamp"); }}>🏅 スタンプラリー</button>
+          <button onClick={() => { setMenuOpen(false); navigate("/Stamp"); }}>🏅 訪問記録</button>
           <button onClick={() => { setMenuOpen(false); navigate("/diary"); }}>📝 二郎ログ</button>
           <button onClick={() => { setMenuOpen(false); navigate("/map"); }}>🗾 二郎全国マップ</button>
         </div>
